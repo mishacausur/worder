@@ -26,6 +26,11 @@
 		B66C8D3329195302009B0055 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D3229195302009B0055 /* MainViewController.swift */; };
 		B66C8D3529195350009B0055 /* MainViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D3429195350009B0055 /* MainViewAssembly.swift */; };
 		B66C8D38291958C0009B0055 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B66C8D37291958C0009B0055 /* RxSwift */; };
+		B66C8D3B291962D1009B0055 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D3A291962D1009B0055 /* Builder.swift */; };
+		B66C8D3D291962E9009B0055 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D3C291962E9009B0055 /* Layout.swift */; };
+		B66C8D4029196310009B0055 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D3F29196310009B0055 /* NSLayoutConstraint.swift */; };
+		B66C8D422919632D009B0055 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D412919632D009B0055 /* Array.swift */; };
+		B66C8D44291963B7009B0055 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D43291963B7009B0055 /* Configurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +54,11 @@
 		B66C8D30291952C4009B0055 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B66C8D3229195302009B0055 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B66C8D3429195350009B0055 /* MainViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewAssembly.swift; sourceTree = "<group>"; };
+		B66C8D3A291962D1009B0055 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		B66C8D3C291962E9009B0055 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		B66C8D3F29196310009B0055 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
+		B66C8D412919632D009B0055 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		B66C8D43291963B7009B0055 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,8 @@
 		B66C8D1629194A43009B0055 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B66C8D3E291962FD009B0055 /* Extensions */,
+				B66C8D39291962B3009B0055 /* Constraint */,
 				B66C8D1C29194AD1009B0055 /* Coordinator */,
 				B66C8D1B29194ABD009B0055 /* View */,
 			);
@@ -159,6 +171,25 @@
 				B66C8D3229195302009B0055 /* MainViewController.swift */,
 			);
 			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		B66C8D39291962B3009B0055 /* Constraint */ = {
+			isa = PBXGroup;
+			children = (
+				B66C8D3A291962D1009B0055 /* Builder.swift */,
+				B66C8D3C291962E9009B0055 /* Layout.swift */,
+			);
+			path = Constraint;
+			sourceTree = "<group>";
+		};
+		B66C8D3E291962FD009B0055 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B66C8D3F29196310009B0055 /* NSLayoutConstraint.swift */,
+				B66C8D43291963B7009B0055 /* Configurable.swift */,
+				B66C8D412919632D009B0055 /* Array.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,12 +269,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66C8D2429194B2D009B0055 /* Route.swift in Sources */,
+				B66C8D422919632D009B0055 /* Array.swift in Sources */,
 				B66C8D3529195350009B0055 /* MainViewAssembly.swift in Sources */,
+				B66C8D44291963B7009B0055 /* Configurable.swift in Sources */,
 				B66C8D31291952C5009B0055 /* MainView.swift in Sources */,
 				B66C8D1A29194AA2009B0055 /* ViewModel.swift in Sources */,
 				B66C8D1829194A86009B0055 /* View.swift in Sources */,
+				B66C8D3D291962E9009B0055 /* Layout.swift in Sources */,
 				B66C8D2629194B4A009B0055 /* Module.swift in Sources */,
 				B66C8D06291949CA009B0055 /* ViewController.swift in Sources */,
+				B66C8D3B291962D1009B0055 /* Builder.swift in Sources */,
 				B66C8D2F29194EA0009B0055 /* MainViewModel.swift in Sources */,
 				B66C8D2B29194BB3009B0055 /* Presentable.swift in Sources */,
 				B66C8D2929194BA0009B0055 /* ModuleFactory.swift in Sources */,
@@ -251,6 +286,7 @@
 				B66C8D02291949CA009B0055 /* AppDelegate.swift in Sources */,
 				B66C8D04291949CA009B0055 /* SceneDelegate.swift in Sources */,
 				B66C8D2229194B1A009B0055 /* Coordinatable.swift in Sources */,
+				B66C8D4029196310009B0055 /* NSLayoutConstraint.swift in Sources */,
 				B66C8D1E29194ADF009B0055 /* Coordinated.swift in Sources */,
 				B66C8D2029194AFF009B0055 /* Coordinator.swift in Sources */,
 			);

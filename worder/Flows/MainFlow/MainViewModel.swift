@@ -7,6 +7,6 @@
 
 import RxSwift
 
-final class MainViewModel: ViewModel{
+final class MainViewModel: ViewModel {
     
 }

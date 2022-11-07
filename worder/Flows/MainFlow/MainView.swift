@@ -6,6 +6,7 @@
 //
 
 final class MainView: Viеw {
+    
     override func layout() {
         backgroundColor = .red
     }
