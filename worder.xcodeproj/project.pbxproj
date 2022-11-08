@@ -41,6 +41,8 @@
 		B66C8D57291A9791009B0055 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B66C8D56291A9791009B0055 /* FirebaseFirestore */; };
 		B66C8D5A291A9D19009B0055 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D59291A9D19009B0055 /* AuthService.swift */; };
 		B66C8D5C291A9E37009B0055 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D5B291A9E37009B0055 /* AuthError.swift */; };
+		B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D5F291AEE3E009B0055 /* WordModel.swift */; };
+		B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D61291AEEC8009B0055 /* WordType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		B66C8D4D291A9617009B0055 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B66C8D59291A9D19009B0055 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B66C8D5B291A9E37009B0055 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		B66C8D5F291AEE3E009B0055 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		B66C8D61291AEEC8009B0055 /* WordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		B66C8D00291949CA009B0055 /* worder */ = {
 			isa = PBXGroup;
 			children = (
+				B66C8D5D291AEE20009B0055 /* Data */,
 				B66C8D4529197498009B0055 /* Services */,
 				B66C8D2C29194C43009B0055 /* Flows */,
 				B66C8D1629194A43009B0055 /* Components */,
@@ -242,6 +247,23 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		B66C8D5D291AEE20009B0055 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B66C8D5E291AEE30009B0055 /* DataModels */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B66C8D5E291AEE30009B0055 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				B66C8D5F291AEE3E009B0055 /* WordModel.swift */,
+				B66C8D61291AEEC8009B0055 /* WordType.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,6 +353,7 @@
 				B66C8D44291963B7009B0055 /* Configurable.swift in Sources */,
 				B66C8D31291952C5009B0055 /* MainView.swift in Sources */,
 				B66C8D1A29194AA2009B0055 /* ViewModel.swift in Sources */,
+				B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */,
 				B66C8D5A291A9D19009B0055 /* AuthService.swift in Sources */,
 				B66C8D5C291A9E37009B0055 /* AuthError.swift in Sources */,
 				B66C8D1829194A86009B0055 /* View.swift in Sources */,
@@ -343,6 +366,7 @@
 				B66C8D4C291976D9009B0055 /* LoaderService.swift in Sources */,
 				B66C8D2B29194BB3009B0055 /* Presentable.swift in Sources */,
 				B66C8D2929194BA0009B0055 /* ModuleFactory.swift in Sources */,
+				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
 				B66C8D3329195302009B0055 /* MainViewController.swift in Sources */,
 				B66C8D02291949CA009B0055 /* AppDelegate.swift in Sources */,
 				B66C8D04291949CA009B0055 /* SceneDelegate.swift in Sources */,
