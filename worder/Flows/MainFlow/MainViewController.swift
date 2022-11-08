@@ -6,5 +6,8 @@
 //
 
 final class MainViewController: ViewController<MainView, MainViewModel> {
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.getData()
+    }
 }

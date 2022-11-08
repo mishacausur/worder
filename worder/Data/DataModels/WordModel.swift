@@ -8,6 +8,6 @@
 struct WordModel: Codable {
     
     let word: String
-    let translation: [String]
-    let type: WordType
+    let translation: String
+    let type: String
 }

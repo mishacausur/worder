@@ -8,5 +8,12 @@
 import RxSwift
 
 final class MainViewModel: ViewModel {
-    
+    func getData() {
+        let manager = NetworkService()
+        Task {
+            await manager.getWords {
+                print($0)
+            }
+        }
+    }
 }

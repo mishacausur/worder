@@ -11,4 +11,8 @@ enum WordType: Codable {
     case verb
     case adjective
     case idiom
+    
+    private enum CodingKeys: String, CodingKey {
+        case noun, verb, adjective, idiom
+    }
 }
