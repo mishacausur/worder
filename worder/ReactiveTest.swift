@@ -10,7 +10,7 @@ import RxSwift
 struct ReactiveTestImpl {
     
     func react() {
-        reactiveExampleReplay()
+        reactiveExampleSideEffect()
     }
     
     // MARK: - FOUNDATION
@@ -118,6 +118,19 @@ struct ReactiveTestImpl {
             
             subject.onNext(4)
             subject.onNext(5)
+        }
+    }
+    
+    private func reactiveExampleSideEffect() {
+        example("side effects") {
+            let disposableBag = DisposeBag()
+            let sequence  = [0, 32, 100, 300]
+            let temporary = Observable.from(sequence)
+            temporary
+                .do(onNext: { print("\($0)F = ", terminator: "")})
+                .map { Double($0 - 31) * 5/9.0 }
+                .subscribe(onNext: { print(String(format: "%.1f", $0))})
+                .disposed(by: disposableBag)
         }
     }
 }
