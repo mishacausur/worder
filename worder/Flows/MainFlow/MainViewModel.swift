@@ -9,9 +9,7 @@ import RxSwift
 
 final class MainViewModel: ViewModel {
     func getData() {
-        reactiveExampleJust()
-        reactiveExampleOf()
-        reactiveExampleCreate()
+        reactiveExampleFilter()
         let manager = NetworkService()
         Task {
             await manager.getWords {
@@ -52,7 +50,15 @@ final class MainViewModel: ViewModel {
                 print("disposed")
             }
         }
-        
-
+    }
+    
+    private func reactiveExampleFilter() {
+        example("filter") {
+            let sequence = Observable.of(1, 2, 4, 6, 10, 14, 27).filter { $0 >= 10 }
+            
+            sequence.subscribe {
+                print($0)
+            }
+        }
     }
 }
