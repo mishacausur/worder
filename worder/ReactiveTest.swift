@@ -10,7 +10,7 @@ import RxSwift
 struct ReactiveTestImpl {
     
     func react() {
-        reactiveExampleBehavior()
+        reactiveExampleReplay()
     }
     
     // MARK: - FOUNDATION
@@ -100,6 +100,24 @@ struct ReactiveTestImpl {
             subject.onNext(3)
             
             let secondSubscriber = subject.subscribe(onNext: { print(#line, $0)}).disposed(by: disposableBag)
+        }
+    }
+    
+    private func reactiveExampleReplay() {
+        example("replay") {
+            let disposableBag = DisposeBag()
+            let subject = ReplaySubject<Int>.create(bufferSize: 5)
+            
+            subject.subscribe { print("First subscription: ", $0) }.disposed(by: disposableBag)
+            
+            subject.onNext(1)
+            subject.onNext(2)
+            subject.onNext(3)
+            
+            subject.subscribe { print("Second subscription: ", $0) }.disposed(by: disposableBag)
+            
+            subject.onNext(4)
+            subject.onNext(5)
         }
     }
 }
