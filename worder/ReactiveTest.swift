@@ -170,5 +170,6 @@ struct ReactiveTestImpl {
             .subscribe(onNext: { print("Observable thread: \(Thread.current)", $0) })
         }
     }
-
+    
+    // MARK: - Units
 }
