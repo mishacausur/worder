@@ -11,7 +11,7 @@ import Foundation
 struct ReactiveTestImpl {
     
     func react() {
-        reactiveExampleWithObserveOn()
+        reactiveExampleSubscribeOnObserveOn()
     }
     
     // MARK: - FOUNDATION
@@ -154,9 +154,21 @@ struct ReactiveTestImpl {
     
     private func reactiveExampleSubscribeOnObserveOn() {
         example("with observe on") {
-            _ = Observable.of(1, 2, 3)
-                .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-                .subscribe(onNext: { print(Thread.current, $0) }, onCompleted: { print("completed") })
+            let queue = DispatchQueue.global(qos: .default)
+            let queue2 = DispatchQueue.global(qos: .default)
+            
+            print(Thread.current)
+            _ = Observable<Int>.create {
+                print("Observable thread: \(Thread.current)")
+                $0.on(.next(1))
+                $0.on(.next(2))
+                $0.on(.next(3))
+                return Disposables.create()
+            }
+            .subscribe(on: SerialDispatchQueueScheduler(internalSerialQueueName: "queue"))
+            .observe(on: SerialDispatchQueueScheduler(internalSerialQueueName: "queue2"))
+            .subscribe(onNext: { print("Observable thread: \(Thread.current)", $0) })
         }
     }
+
 }
