@@ -9,7 +9,7 @@ import RxSwift
 
 final class MainViewModel: ViewModel {
     func getData() {
-        reactiveExampleMap()
+        reactiveExampleMerge()
         let manager = NetworkService()
         Task {
             await manager.getWords {
@@ -60,6 +60,18 @@ final class MainViewModel: ViewModel {
         example("map") {
             let sequence = Observable.of(1, 2, 4, 6).map { "the number is \($0 * 10)" }
             sequence.subscribe { print($0) }
+        }
+    }
+    
+    private func reactiveExampleMerge() {
+        example("merge") {
+            let firstThread = Observable.of("i", "t", "w")
+            let secondThread = Observable.of("m", "u", "o")
+            
+            let combine = Observable.of(firstThread, secondThread)
+            
+            let merger = combine.merge()
+            merger.subscribe { print($0) }
         }
     }
 }
