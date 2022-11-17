@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B668747F29264A73002CB33B /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668747E29264A73002CB33B /* Completion.swift */; };
 		B66C8D02291949CA009B0055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D01291949CA009B0055 /* AppDelegate.swift */; };
 		B66C8D04291949CA009B0055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D03291949CA009B0055 /* SceneDelegate.swift */; };
 		B66C8D06291949CA009B0055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D05291949CA009B0055 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B668747E29264A73002CB33B /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		B66C8CFE291949CA009B0055 /* worder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = worder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66C8D01291949CA009B0055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B66C8D03291949CA009B0055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				B66C8D3F29196310009B0055 /* NSLayoutConstraint.swift */,
 				B66C8D43291963B7009B0055 /* Configurable.swift */,
 				B66C8D412919632D009B0055 /* Array.swift */,
+				B668747E29264A73002CB33B /* Completion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				B66C8D3D291962E9009B0055 /* Layout.swift in Sources */,
 				B66C8D2629194B4A009B0055 /* Module.swift in Sources */,
 				B66C8D06291949CA009B0055 /* ViewController.swift in Sources */,
+				B668747F29264A73002CB33B /* Completion.swift in Sources */,
 				B66C8D3B291962D1009B0055 /* Builder.swift in Sources */,
 				B66C8D2F29194EA0009B0055 /* MainViewModel.swift in Sources */,
 				B66C8D4A291976A6009B0055 /* AppError.swift in Sources */,
