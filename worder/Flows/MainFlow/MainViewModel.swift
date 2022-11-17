@@ -9,7 +9,7 @@ import RxSwift
 
 final class MainViewModel: ViewModel {
     func getData() {
-        reactiveExampleFilter()
+        reactiveExampleMap()
         let manager = NetworkService()
         Task {
             await manager.getWords {
@@ -22,18 +22,14 @@ final class MainViewModel: ViewModel {
         example("just") {
             let observable = Observable.just("Hi there, u'r using RxSwift now, congrats")
             
-            observable.subscribe {
-                print($0)
-            }
+            observable.subscribe { print($0) }
         }
     }
     
     private func reactiveExampleOf() {
         example("of") {
             let observable = Observable.of(1, 2, 3, 4, 5)
-            observable.subscribe {
-                print($0)
-            }
+            observable.subscribe { print($0) }
         }
     }
     
@@ -56,9 +52,14 @@ final class MainViewModel: ViewModel {
         example("filter") {
             let sequence = Observable.of(1, 2, 4, 6, 10, 14, 27).filter { $0 >= 10 }
             
-            sequence.subscribe {
-                print($0)
-            }
+            sequence.subscribe { print($0) }
+        }
+    }
+    
+    private func reactiveExampleMap() {
+        example("map") {
+            let sequence = Observable.of(1, 2, 4, 6).map { "the number is \($0 * 10)" }
+            sequence.subscribe { print($0) }
         }
     }
 }
