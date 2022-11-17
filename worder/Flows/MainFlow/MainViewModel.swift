@@ -11,6 +11,7 @@ final class MainViewModel: ViewModel {
     func getData() {
         reactiveExampleJust()
         reactiveExampleOf()
+        reactiveExampleCreate()
         let manager = NetworkService()
         Task {
             await manager.getWords {
@@ -36,5 +37,22 @@ final class MainViewModel: ViewModel {
                 print($0)
             }
         }
+    }
+    
+    private func reactiveExampleCreate() {
+        example("create") {
+            let items = [1, 2, 3, 4, 5]
+            Observable.from(items).subscribe {
+                print($0)
+            } onError: {
+                print($0)
+            } onCompleted: {
+                print("completed")
+            } onDisposed: {
+                print("disposed")
+            }
+        }
+        
+
     }
 }
