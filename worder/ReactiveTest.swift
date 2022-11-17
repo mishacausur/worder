@@ -95,7 +95,11 @@ struct ReactiveTestImpl {
             let disposableBag = DisposeBag()
             let subject = BehaviorSubject(value: 1)
             
-            let firstSubscriber = subject.subscribe(onNext: { print($0) }).disposed(by: disposableBag)
+            let firstSubscriber = subject.subscribe(onNext: { print(#line, $0) }).disposed(by: disposableBag)
+            subject.onNext(2)
+            subject.onNext(3)
+            
+            let secondSubscriber = subject.subscribe(onNext: { print(#line, $0)}).disposed(by: disposableBag)
         }
     }
 }
