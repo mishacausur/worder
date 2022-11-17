@@ -77,9 +77,14 @@ struct ReactiveTestImpl {
     private func reactiveExamplePublished() {
         let disposableBag = DisposeBag()
         let subject = PublishSubject<String>()
-        subject.subscribe { print($0) }.disposed(by: disposableBag)
+        subject.subscribe { print("Subscription 1 ", $0) }.disposed(by: disposableBag)
         subject.on(Event<String>.next("Hi there"))
         subject.on(.next("it's working using RxSwift now"))
         subject.onNext("It's amazing, isn't it?")
+        
+        subject.subscribe(onNext: { print("Subscription 2 ", $0) }).disposed(by: disposableBag)
+        
+        subject.onNext("it's made right after the second one has been implemented")
+        subject.onNext("and it's kind of multi calling")
     }
 }
