@@ -10,7 +10,7 @@ import RxSwift
 struct ReactiveTestImpl {
     
     func react() {
-        reactiveExamplePublished()
+        reactiveExampleBehavior()
     }
     
     // MARK: - FOUNDATION
@@ -75,16 +75,27 @@ struct ReactiveTestImpl {
     // MARK: - SUBJECTS
     
     private func reactiveExamplePublished() {
-        let disposableBag = DisposeBag()
-        let subject = PublishSubject<String>()
-        subject.subscribe { print("Subscription 1 ", $0) }.disposed(by: disposableBag)
-        subject.on(Event<String>.next("Hi there"))
-        subject.on(.next("it's working using RxSwift now"))
-        subject.onNext("It's amazing, isn't it?")
-        
-        subject.subscribe(onNext: { print("Subscription 2 ", $0) }).disposed(by: disposableBag)
-        
-        subject.onNext("it's made right after the second one has been implemented")
-        subject.onNext("and it's kind of multi calling")
+        example("published") {
+            let disposableBag = DisposeBag()
+            let subject = PublishSubject<String>()
+            subject.subscribe { print("Subscription 1 ", $0) }.disposed(by: disposableBag)
+            subject.on(Event<String>.next("Hi there"))
+            subject.on(.next("it's working using RxSwift now"))
+            subject.onNext("It's amazing, isn't it?")
+            
+            subject.subscribe(onNext: { print("Subscription 2 ", $0) }).disposed(by: disposableBag)
+            
+            subject.onNext("it's made right after the second one has been implemented")
+            subject.onNext("and it's kind of multi calling")
+        }
+    }
+    
+    private func reactiveExampleBehavior() {
+        example("behavior") {
+            let disposableBag = DisposeBag()
+            let subject = BehaviorSubject(value: 1)
+            
+            let firstSubscriber = subject.subscribe(onNext: { print($0) }).disposed(by: disposableBag)
+        }
     }
 }
