@@ -45,6 +45,7 @@
 		B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D5F291AEE3E009B0055 /* WordModel.swift */; };
 		B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D61291AEEC8009B0055 /* WordType.swift */; };
 		B66C8D65291AEFA6009B0055 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D64291AEFA6009B0055 /* DataManager.swift */; };
+		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		B66C8D5F291AEE3E009B0055 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 		B66C8D61291AEEC8009B0055 /* WordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordType.swift; sourceTree = "<group>"; };
 		B66C8D64291AEFA6009B0055 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				B66C8D1629194A43009B0055 /* Components */,
 				B66C8D1529194A30009B0055 /* App */,
 				B66C8D0F291949CE009B0055 /* Info.plist */,
+				B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */,
 			);
 			path = worder;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				B66C8D5C291A9E37009B0055 /* AuthError.swift in Sources */,
 				B66C8D1829194A86009B0055 /* View.swift in Sources */,
 				B66C8D3D291962E9009B0055 /* Layout.swift in Sources */,
+				B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */,
 				B66C8D2629194B4A009B0055 /* Module.swift in Sources */,
 				B66C8D06291949CA009B0055 /* ViewController.swift in Sources */,
 				B668747F29264A73002CB33B /* Completion.swift in Sources */,
