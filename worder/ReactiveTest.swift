@@ -6,11 +6,12 @@
 //
 
 import RxSwift
+import Foundation
 
 struct ReactiveTestImpl {
     
     func react() {
-        reactiveExampleSideEffect()
+        reactiveExampleWithObserveOn()
     }
     
     // MARK: - FOUNDATION
@@ -131,6 +132,31 @@ struct ReactiveTestImpl {
                 .map { Double($0 - 31) * 5/9.0 }
                 .subscribe(onNext: { print(String(format: "%.1f", $0))})
                 .disposed(by: disposableBag)
+        }
+    }
+    
+    // MARK: - Schedulers
+    /// without observe-on (main thread always)
+    private func reactiveExampleWithoutObserveOn() {
+        example("without observe on") {
+            _ = Observable.of(1, 2, 3)
+                .subscribe(onNext: { print(Thread.current, $0) }, onCompleted: { print("completed") })
+        }
+    }
+    /// w/ observe-on
+    private func reactiveExampleWithObserveOn() {
+        example("with observe on") {
+            _ = Observable.of(1, 2, 3)
+                .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe(onNext: { print(Thread.current, $0) }, onCompleted: { print("completed") })
+        }
+    }
+    
+    private func reactiveExampleSubscribeOnObserveOn() {
+        example("with observe on") {
+            _ = Observable.of(1, 2, 3)
+                .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe(onNext: { print(Thread.current, $0) }, onCompleted: { print("completed") })
         }
     }
 }
