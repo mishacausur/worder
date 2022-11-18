@@ -36,6 +36,7 @@ final class MainView: Viеw {
     }
     
     override func bindViews() {
+        labelRecognizer()
         textField.rx.text
             .orEmpty
             .bind(to: text)
@@ -80,5 +81,18 @@ final class MainView: Viеw {
          button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 44),
          button.heightAnchor.constraint(equalTo: textField.heightAnchor),
          button.widthAnchor.constraint(equalTo:  textField.widthAnchor)].forEach { $0.isActive = true }
+    }
+    
+    private func labelRecognizer() {
+        let gesture = UITapGestureRecognizer()
+        label.addGestureRecognizer(gesture)
+        label.isUserInteractionEnabled = true
+        gesture.rx.event
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                print($0)
+                self?.textField.endEditing(true)
+            })
+            .disposed(by: disposeBag)
     }
 }
