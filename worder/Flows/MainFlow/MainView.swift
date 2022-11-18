@@ -23,6 +23,7 @@ final class MainView: Viеw {
     // MARK: - PROPERTIES
     private let disposeBag = DisposeBag()
     private(set) var text = BehaviorRelay<String>(value: "")
+    private let buttonSubject = PublishSubject<String>()
     
     override func addViews() {
         addViews(textField, button)
@@ -34,8 +35,20 @@ final class MainView: Viеw {
             .bind(to: text)
             .disposed(by: disposeBag)
         
-        text.asObservable().subscribe(onNext: { print($0) }).disposed(by: disposeBag)
+        text
+            .asObservable()
+            .subscribe(onNext: { print($0) })
+            .disposed(by: disposeBag)
         
+        button.rx.tap
+            .map { "Button tapped" }
+            .bind(to: buttonSubject)
+            .disposed(by: disposeBag)
+        
+        buttonSubject
+            .asObservable()
+            .subscribe(onNext: { print($0) })
+            .disposed(by: disposeBag)
     }
     
     override func layout() {
