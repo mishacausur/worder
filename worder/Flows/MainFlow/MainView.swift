@@ -11,10 +11,16 @@ import UIKit
 final class MainView: Viеw {
     
     // MARK: - UI
+    private let label = UILabel().configure {
+        $0.layer.borderColor = UIColor.darkGray.cgColor
+        $0.layer.borderWidth = 1
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     private let textField = UITextField().configure {
         $0.layer.borderColor = UIColor.darkGray.cgColor
         $0.layer.borderWidth = 1
-        $0.translatesAutoresizingMaskIntoConstraints = false }
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     private let button = UIButton().configure {
         $0.backgroundColor = .darkGray
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +32,7 @@ final class MainView: Viеw {
     private let buttonSubject = PublishSubject<String>()
     
     override func addViews() {
-        addViews(textField, button)
+        addViews(label, textField, button)
     }
     
     override func bindViews() {
@@ -38,6 +44,11 @@ final class MainView: Viеw {
         text
             .asObservable()
             .subscribe(onNext: { print($0) })
+            .disposed(by: disposeBag)
+        
+        textField.rx.text.bind { [weak self] in
+            self?.label.text = $0
+        }
             .disposed(by: disposeBag)
         
         button.rx.tap
@@ -53,7 +64,7 @@ final class MainView: Viеw {
     
     override func layout() {
         backgroundColor = .white
-        [textField, button].forEach {
+        [label, textField, button].forEach {
             $0.layer.cornerRadius = 8
             $0.layer.masksToBounds = true
         }
@@ -61,6 +72,10 @@ final class MainView: Viеw {
          textField.centerYAnchor.constraint(equalTo: centerYAnchor),
          textField.heightAnchor.constraint(equalToConstant: 66),
          textField.widthAnchor.constraint(equalToConstant: 144),
+         label.centerXAnchor.constraint(equalTo: centerXAnchor),
+         label.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -44),
+         label.heightAnchor.constraint(equalTo: textField.heightAnchor),
+         label.widthAnchor.constraint(equalTo:  textField.widthAnchor),
          button.centerXAnchor.constraint(equalTo: centerXAnchor),
          button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 44),
          button.heightAnchor.constraint(equalTo: textField.heightAnchor),
