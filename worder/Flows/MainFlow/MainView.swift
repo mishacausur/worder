@@ -25,14 +25,25 @@ final class MainView: Viеw {
         $0.backgroundColor = .darkGray
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    private let countButton = UIButton().configure {
+        $0.setTitle("increase counter", for: .normal)
+        $0.backgroundColor = .orange
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    private let counter = UILabel().configure {
+        $0.textColor = .orange
+        $0.font = .systemFont(ofSize: 24, weight: .bold)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     
     // MARK: - PROPERTIES
     private let disposeBag = DisposeBag()
     private(set) var text = BehaviorRelay<String>(value: "")
     private let buttonSubject = PublishSubject<String>()
+    private var countText = 0
     
     override func addViews() {
-        addViews(label, textField, button)
+        addViews(label, textField, button, countButton, counter)
     }
     
     override func bindViews() {
@@ -57,6 +68,14 @@ final class MainView: Viеw {
             .bind(to: buttonSubject)
             .disposed(by: disposeBag)
         
+        countButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                self?.countText += 1
+                self?.counter.text = String(describing: self?.countText)
+            })
+            .disposed(by: disposeBag)
+        
         buttonSubject
             .asObservable()
             .subscribe(onNext: { print($0) })
@@ -65,7 +84,7 @@ final class MainView: Viеw {
     
     override func layout() {
         backgroundColor = .white
-        [label, textField, button].forEach {
+        [label, textField, button, countButton].forEach {
             $0.layer.cornerRadius = 8
             $0.layer.masksToBounds = true
         }
@@ -80,7 +99,13 @@ final class MainView: Viеw {
          button.centerXAnchor.constraint(equalTo: centerXAnchor),
          button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 44),
          button.heightAnchor.constraint(equalTo: textField.heightAnchor),
-         button.widthAnchor.constraint(equalTo:  textField.widthAnchor)].forEach { $0.isActive = true }
+         button.widthAnchor.constraint(equalTo:  textField.widthAnchor),
+         countButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+         countButton.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 44),
+         countButton.heightAnchor.constraint(equalTo: textField.heightAnchor),
+         countButton.widthAnchor.constraint(equalTo:  textField.widthAnchor),
+         counter.centerXAnchor.constraint(equalTo: centerXAnchor),
+         counter.topAnchor.constraint(equalTo: countButton.bottomAnchor, constant: 12)].forEach { $0.isActive = true }
     }
     
     private func labelRecognizer() {
