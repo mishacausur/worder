@@ -17,3 +17,10 @@ extension Configurable where Self: UIView {
         return self
     }
 }
+
+extension UIView: Configurable {
+    
+    func addViews(_ views: UIView...) {
+        views.forEach { addSubview($0) }
+    }
+}

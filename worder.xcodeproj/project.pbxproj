@@ -46,6 +46,7 @@
 		B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D61291AEEC8009B0055 /* WordType.swift */; };
 		B66C8D65291AEFA6009B0055 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D64291AEFA6009B0055 /* DataManager.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
+		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */,
 				B66C8D51291A9791009B0055 /* FirebaseAnalytics in Frameworks */,
 				B66C8D53291A9791009B0055 /* FirebaseAuth in Frameworks */,
 				B66C8D55291A9791009B0055 /* FirebaseDatabase in Frameworks */,
@@ -303,6 +305,7 @@
 				B66C8D52291A9791009B0055 /* FirebaseAuth */,
 				B66C8D54291A9791009B0055 /* FirebaseDatabase */,
 				B66C8D56291A9791009B0055 /* FirebaseFirestore */,
+				B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */,
 			);
 			productName = worder;
 			productReference = B66C8CFE291949CA009B0055 /* worder.app */;
@@ -335,6 +338,7 @@
 			packageReferences = (
 				B66C8D36291958C0009B0055 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B66C8D4F291A9791009B0055 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B6EBD1BA2927C2F3001DC2D2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B66C8CFF291949CA009B0055 /* Products */;
 			projectDirPath = "";
@@ -619,6 +623,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		B6EBD1BA2927C2F3001DC2D2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -646,6 +658,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B66C8D4F291A9791009B0055 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EBD1BA2927C2F3001DC2D2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
