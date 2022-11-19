@@ -105,7 +105,14 @@ final class MainView: Viеw {
             .asDriver()
             .drive(progress.rx.progress)
             .disposed(by: disposeBag)
-*/
+        
+        slider.rx.value
+            .asDriver()
+            .map { String(describing: Int($0 * 100)) }
+            .drive(progressLable.rx.text)
+            .disposed(by: disposeBag)
+ */
+        
         slider.rx.value
             .asDriver()
             .drive(onNext: { [weak self] in
