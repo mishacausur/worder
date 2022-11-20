@@ -9,7 +9,10 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
-    private let wordLabel = UILabel().configure { $0.translatesAutoresizingMaskIntoConstraints = false }
+    private let wordLabel = UILabel().configure {
+        $0.font = .systemFont(ofSize: 24, weight: .bold)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     private let translationLabel = UILabel().configure { $0.translatesAutoresizingMaskIntoConstraints = false }
     
     static var identifier: String {
@@ -33,7 +36,7 @@ class DetailTableViewCell: UITableViewCell {
     
     private func layout() {
         [wordLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-         wordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+         wordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
          translationLabel.topAnchor.constraint(equalTo: wordLabel.bottomAnchor, constant: 8),
          translationLabel.leadingAnchor.constraint(equalTo: wordLabel.leadingAnchor),
          translationLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)].forEach { $0.isActive = true}
