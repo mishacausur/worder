@@ -22,8 +22,8 @@ final class DetailViewModel: ViewModel {
         self.words = words
     }
     
-    private func configure() {
-        
+    func wordFlow(_ word: WordModel) {
+        coordinator?.route(.word(word))
     }
 }
 

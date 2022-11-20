@@ -52,6 +52,11 @@
 		B6EBD1C3292A40C3001DC2D2 /* DetailViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */; };
 		B6EBD1C5292A40CC001DC2D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */; };
 		B6EBD1C8292A5178001DC2D2 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C7292A5178001DC2D2 /* DetailTableViewCell.swift */; };
+		B6EBD1CA292A5695001DC2D2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C9292A5695001DC2D2 /* String.swift */; };
+		B6EBD1CD292A5748001DC2D2 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1CC292A5748001DC2D2 /* WordViewModel.swift */; };
+		B6EBD1CF292A574F001DC2D2 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1CE292A574F001DC2D2 /* WordView.swift */; };
+		B6EBD1D1292A575F001DC2D2 /* WordViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1D0292A575F001DC2D2 /* WordViewAssembly.swift */; };
+		B6EBD1D3292A5770001DC2D2 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1D2292A5770001DC2D2 /* WordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +101,11 @@
 		B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewAssembly.swift; sourceTree = "<group>"; };
 		B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B6EBD1C7292A5178001DC2D2 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		B6EBD1C9292A5695001DC2D2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B6EBD1CC292A5748001DC2D2 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
+		B6EBD1CE292A574F001DC2D2 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		B6EBD1D0292A575F001DC2D2 /* WordViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewAssembly.swift; sourceTree = "<group>"; };
+		B6EBD1D2292A5770001DC2D2 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +213,7 @@
 		B66C8D2C29194C43009B0055 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				B6EBD1CB292A5734001DC2D2 /* WordFlow */,
 				B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */,
 				B66C8D2D29194C4E009B0055 /* MainFlow */,
 			);
@@ -236,6 +247,7 @@
 				B66C8D43291963B7009B0055 /* Configurable.swift */,
 				B66C8D412919632D009B0055 /* Array.swift */,
 				B668747E29264A73002CB33B /* Completion.swift */,
+				B6EBD1C9292A5695001DC2D2 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +324,17 @@
 				B6EBD1C7292A5178001DC2D2 /* DetailTableViewCell.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		B6EBD1CB292A5734001DC2D2 /* WordFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B6EBD1CC292A5748001DC2D2 /* WordViewModel.swift */,
+				B6EBD1CE292A574F001DC2D2 /* WordView.swift */,
+				B6EBD1D0292A575F001DC2D2 /* WordViewAssembly.swift */,
+				B6EBD1D2292A5770001DC2D2 /* WordViewController.swift */,
+			);
+			path = WordFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +421,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EBD1D1292A575F001DC2D2 /* WordViewAssembly.swift in Sources */,
+				B6EBD1D3292A5770001DC2D2 /* WordViewController.swift in Sources */,
+				B6EBD1CD292A5748001DC2D2 /* WordViewModel.swift in Sources */,
 				B66C8D65291AEFA6009B0055 /* DataManager.swift in Sources */,
 				B66C8D48291974BB009B0055 /* NetworkService.swift in Sources */,
 				B66C8D2429194B2D009B0055 /* Route.swift in Sources */,
@@ -405,6 +431,7 @@
 				B66C8D3529195350009B0055 /* MainViewAssembly.swift in Sources */,
 				B66C8D44291963B7009B0055 /* Configurable.swift in Sources */,
 				B66C8D31291952C5009B0055 /* MainView.swift in Sources */,
+				B6EBD1CF292A574F001DC2D2 /* WordView.swift in Sources */,
 				B66C8D1A29194AA2009B0055 /* ViewModel.swift in Sources */,
 				B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */,
 				B66C8D5A291A9D19009B0055 /* AuthService.swift in Sources */,
@@ -425,6 +452,7 @@
 				B66C8D2B29194BB3009B0055 /* Presentable.swift in Sources */,
 				B66C8D2929194BA0009B0055 /* ModuleFactory.swift in Sources */,
 				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
+				B6EBD1CA292A5695001DC2D2 /* String.swift in Sources */,
 				B66C8D3329195302009B0055 /* MainViewController.swift in Sources */,
 				B6EBD1C5292A40CC001DC2D2 /* DetailViewController.swift in Sources */,
 				B6EBD1C3292A40C3001DC2D2 /* DetailViewAssembly.swift in Sources */,

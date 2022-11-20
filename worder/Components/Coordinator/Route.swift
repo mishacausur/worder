@@ -9,4 +9,5 @@ enum Route {
     case addWord
     case dismiss
     case details([WordModel])
+    case word(WordModel)
 }

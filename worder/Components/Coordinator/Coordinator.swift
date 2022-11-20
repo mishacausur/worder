@@ -31,6 +31,8 @@ final class Coordinator: Coordinatable {
             navigationController.popViewController(animated: true)
         case .details(let words):
             startDetailFlow(words)
+        case .word(let word):
+            startWordFlow(word)
         }
     }
     
@@ -42,6 +44,11 @@ final class Coordinator: Coordinatable {
     private func startDetailFlow(_ words: [WordModel]) {
         let detailModule = ModuleFactory.createDetailModule(self, words: words)
         navigationController.pushViewController(detailModule.presentable, animated: true)
+    }
+    
+    private func startWordFlow(_ word: WordModel) {
+        let wordModule = ModuleFactory.createWordModule(self, word: word)
+        navigationController.pushViewController(wordModule.presentable, animated: true)
     }
 }
 

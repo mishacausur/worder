@@ -11,6 +11,7 @@ final class DetailViewController: ViewController<DetailView, DetailViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDataSource()
+        navigationItem.title = .words
     }
     
     func configureDataSource() {
@@ -18,6 +19,13 @@ final class DetailViewController: ViewController<DetailView, DetailViewModel> {
             .bind(to: mainView.tableView.rx.items(cellIdentifier: DetailTableViewCell.identifier)) {( _, word, cell: DetailTableViewCell) in
                 cell.configureLabels(word)
             }
+            .disposed(by: viewModel.disposeBag)
+        
+        mainView.tableView.rx
+            .modelSelected(WordModel.self)
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.wordFlow($0)
+            })
             .disposed(by: viewModel.disposeBag)
     }
 }
