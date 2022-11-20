@@ -8,4 +8,5 @@
 enum Route {
     case addWord
     case dismiss
+    case details
 }

@@ -29,12 +29,19 @@ final class Coordinator: Coordinatable {
             print("started")
         case .dismiss:
             navigationController.popViewController(animated: true)
+        case .details:
+            startDetailFlow()
         }
     }
     
     private func startMainFlow() {
         let mainModule = ModuleFactory.createMainModule(self)
         navigationController.pushViewController(mainModule.presentable, animated: false)
+    }
+    
+    private func startDetailFlow() {
+        let detailModule = ModuleFactory.createDetailModule(self)
+        navigationController.pushViewController(detailModule.presentable, animated: true)
     }
 }
 

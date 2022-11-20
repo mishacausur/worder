@@ -47,6 +47,10 @@
 		B66C8D65291AEFA6009B0055 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D64291AEFA6009B0055 /* DataManager.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
+		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
+		B6EBD1C1292A40B9001DC2D2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */; };
+		B6EBD1C3292A40C3001DC2D2 /* DetailViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */; };
+		B6EBD1C5292A40CC001DC2D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +90,10 @@
 		B66C8D61291AEEC8009B0055 /* WordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordType.swift; sourceTree = "<group>"; };
 		B66C8D64291AEFA6009B0055 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
+		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewAssembly.swift; sourceTree = "<group>"; };
+		B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +201,7 @@
 		B66C8D2C29194C43009B0055 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */,
 				B66C8D2D29194C4E009B0055 /* MainFlow */,
 			);
 			path = Flows;
@@ -281,6 +290,17 @@
 				B66C8D64291AEFA6009B0055 /* DataManager.swift */,
 			);
 			path = DataService;
+			sourceTree = "<group>";
+		};
+		B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */,
+				B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */,
+				B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */,
+				B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */,
+			);
+			path = DetailsFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +402,8 @@
 				B66C8D3D291962E9009B0055 /* Layout.swift in Sources */,
 				B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */,
 				B66C8D2629194B4A009B0055 /* Module.swift in Sources */,
+				B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */,
+				B6EBD1C1292A40B9001DC2D2 /* DetailView.swift in Sources */,
 				B66C8D06291949CA009B0055 /* ViewController.swift in Sources */,
 				B668747F29264A73002CB33B /* Completion.swift in Sources */,
 				B66C8D3B291962D1009B0055 /* Builder.swift in Sources */,
@@ -392,6 +414,8 @@
 				B66C8D2929194BA0009B0055 /* ModuleFactory.swift in Sources */,
 				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
 				B66C8D3329195302009B0055 /* MainViewController.swift in Sources */,
+				B6EBD1C5292A40CC001DC2D2 /* DetailViewController.swift in Sources */,
+				B6EBD1C3292A40C3001DC2D2 /* DetailViewAssembly.swift in Sources */,
 				B66C8D02291949CA009B0055 /* AppDelegate.swift in Sources */,
 				B66C8D04291949CA009B0055 /* SceneDelegate.swift in Sources */,
 				B66C8D2229194B1A009B0055 /* Coordinatable.swift in Sources */,

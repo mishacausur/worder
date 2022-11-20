@@ -54,6 +54,7 @@ final class MainView: Viеw {
     private(set) var text = BehaviorRelay<String>(value: "")
     private let buttonSubject = PublishSubject<String>()
     private var countText = 0
+    var buttonDidTapped: (() -> Void)?
     
     override func addViews() {
         addViews(label,
@@ -83,10 +84,15 @@ final class MainView: Viеw {
         }
             .disposed(by: disposeBag)
         
+//        button.rx.tap
+//            .map { "Button tapped" }
+//            .bind(to: buttonSubject)
+//            .disposed(by: disposeBag)
+        
         button.rx.tap
-            .map { "Button tapped" }
-            .bind(to: buttonSubject)
-            .disposed(by: disposeBag)
+            .asDriver()
+            .drive(onNext: { self.buttonDidTapped?() })
+        .disposed(by: disposeBag)
         
         countButton.rx.tap
             .asDriver()

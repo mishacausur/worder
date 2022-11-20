@@ -18,4 +18,8 @@ final class MainViewModel: ViewModel {
             }
         }
     }
+    
+    func moveToDetails() {
+        coordinator?.route(.details)
+    }
 }
