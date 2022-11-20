@@ -51,6 +51,7 @@
 		B6EBD1C1292A40B9001DC2D2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */; };
 		B6EBD1C3292A40C3001DC2D2 /* DetailViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */; };
 		B6EBD1C5292A40CC001DC2D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */; };
+		B6EBD1C8292A5178001DC2D2 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1C7292A5178001DC2D2 /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewAssembly.swift; sourceTree = "<group>"; };
 		B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B6EBD1C7292A5178001DC2D2 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,12 +297,21 @@
 		B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */ = {
 			isa = PBXGroup;
 			children = (
+				B6EBD1C6292A515F001DC2D2 /* Subviews */,
 				B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */,
 				B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */,
 				B6EBD1C2292A40C3001DC2D2 /* DetailViewAssembly.swift */,
 				B6EBD1C4292A40CC001DC2D2 /* DetailViewController.swift */,
 			);
 			path = DetailsFlow;
+			sourceTree = "<group>";
+		};
+		B6EBD1C6292A515F001DC2D2 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				B6EBD1C7292A5178001DC2D2 /* DetailTableViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +419,7 @@
 				B668747F29264A73002CB33B /* Completion.swift in Sources */,
 				B66C8D3B291962D1009B0055 /* Builder.swift in Sources */,
 				B66C8D2F29194EA0009B0055 /* MainViewModel.swift in Sources */,
+				B6EBD1C8292A5178001DC2D2 /* DetailTableViewCell.swift in Sources */,
 				B66C8D4A291976A6009B0055 /* AppError.swift in Sources */,
 				B66C8D4C291976D9009B0055 /* LoaderService.swift in Sources */,
 				B66C8D2B29194BB3009B0055 /* Presentable.swift in Sources */,

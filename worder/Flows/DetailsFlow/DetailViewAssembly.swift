@@ -7,9 +7,9 @@
 
 extension ModuleFactory {
     
-    static func createDetailModule(_ coordinator: Coordinatable) -> Module<DetailViewController> {
+    static func createDetailModule(_ coordinator: Coordinatable, words: [WordModel]) -> Module<DetailViewController> {
         
-        let viewModel = DetailViewModel()
+        let viewModel = DetailViewModel(words)
         viewModel.coordinator = coordinator
         let viewController = DetailViewController(viewModel: viewModel)
         return Module(presentable: viewController)

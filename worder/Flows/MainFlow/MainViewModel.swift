@@ -9,17 +9,26 @@ import RxSwift
 
 final class MainViewModel: ViewModel {
     private let reactive = ReactiveTestImpl()
+    private(set) var words: [WordModel]?
     func getData() {
         reactive.react()
         let manager = NetworkService()
         Task {
             await manager.getWords {
-                print($0)
+                switch $0 {
+                case .success(let words):
+                    self.words = words
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
         }
     }
     
     func moveToDetails() {
-        coordinator?.route(.details)
+        guard let words = words else {
+            return
+        }
+        coordinator?.route(.details(words))
     }
 }
