@@ -28,9 +28,11 @@ final class WordView: Viеw {
     }
     
     override func layout() {
-        [collectionView.topAnchor.constraint(equalTo: topAnchor),
+        [collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
          collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
          collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach { $0.isActive = true }
+         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+         widthAnchor.constraint(equalToConstant: 100),
+         heightAnchor.constraint(equalToConstant: 100)].forEach { $0.isActive = true }
     }
 }
