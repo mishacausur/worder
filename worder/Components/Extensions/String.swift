@@ -8,3 +8,8 @@
 extension String {
     static let words = "Words"
 }
+
+extension String {
+    public typealias Identity = String
+    public var identity: Identity { self }
+}

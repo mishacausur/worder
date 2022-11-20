@@ -6,7 +6,7 @@
 //
 
 import RxSwift
-import UIKit
+
 final class DetailViewController: ViewController<DetailView, DetailViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()

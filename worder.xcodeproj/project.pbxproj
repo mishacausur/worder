@@ -57,6 +57,8 @@
 		B6EBD1CF292A574F001DC2D2 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1CE292A574F001DC2D2 /* WordView.swift */; };
 		B6EBD1D1292A575F001DC2D2 /* WordViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1D0292A575F001DC2D2 /* WordViewAssembly.swift */; };
 		B6EBD1D3292A5770001DC2D2 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1D2292A5770001DC2D2 /* WordViewController.swift */; };
+		B6EBD1D6292A5F6A001DC2D2 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1D5292A5F6A001DC2D2 /* RxDataSources */; };
+		B6EBD1D8292A784C001DC2D2 /* AnimatedSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1D7292A784C001DC2D2 /* AnimatedSectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,7 @@
 		B6EBD1CE292A574F001DC2D2 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		B6EBD1D0292A575F001DC2D2 /* WordViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewAssembly.swift; sourceTree = "<group>"; };
 		B6EBD1D2292A5770001DC2D2 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		B6EBD1D7292A784C001DC2D2 /* AnimatedSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 				B66C8D51291A9791009B0055 /* FirebaseAnalytics in Frameworks */,
 				B66C8D53291A9791009B0055 /* FirebaseAuth in Frameworks */,
 				B66C8D55291A9791009B0055 /* FirebaseDatabase in Frameworks */,
+				B6EBD1D6292A5F6A001DC2D2 /* RxDataSources in Frameworks */,
 				B66C8D57291A9791009B0055 /* FirebaseFirestore in Frameworks */,
 				B66C8D38291958C0009B0055 /* RxSwift in Frameworks */,
 			);
@@ -285,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				B66C8D5E291AEE30009B0055 /* DataModels */,
+				B6EBD1D7292A784C001DC2D2 /* AnimatedSectionModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				B66C8D54291A9791009B0055 /* FirebaseDatabase */,
 				B66C8D56291A9791009B0055 /* FirebaseFirestore */,
 				B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */,
+				B6EBD1D5292A5F6A001DC2D2 /* RxDataSources */,
 			);
 			productName = worder;
 			productReference = B66C8CFE291949CA009B0055 /* worder.app */;
@@ -393,6 +399,7 @@
 				B66C8D36291958C0009B0055 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B66C8D4F291A9791009B0055 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B6EBD1BA2927C2F3001DC2D2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B6EBD1D4292A5F6A001DC2D2 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = B66C8CFF291949CA009B0055 /* Products */;
 			projectDirPath = "";
@@ -453,6 +460,7 @@
 				B66C8D2929194BA0009B0055 /* ModuleFactory.swift in Sources */,
 				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
 				B6EBD1CA292A5695001DC2D2 /* String.swift in Sources */,
+				B6EBD1D8292A784C001DC2D2 /* AnimatedSectionModel.swift in Sources */,
 				B66C8D3329195302009B0055 /* MainViewController.swift in Sources */,
 				B6EBD1C5292A40CC001DC2D2 /* DetailViewController.swift in Sources */,
 				B6EBD1C3292A40C3001DC2D2 /* DetailViewAssembly.swift in Sources */,
@@ -695,6 +703,14 @@
 				kind = branch;
 			};
 		};
+		B6EBD1D4292A5F6A001DC2D2 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -727,6 +743,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B6EBD1BA2927C2F3001DC2D2 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		B6EBD1D5292A5F6A001DC2D2 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EBD1D4292A5F6A001DC2D2 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
