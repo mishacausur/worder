@@ -60,6 +60,7 @@
 		B6EBD1D6292A5F6A001DC2D2 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1D5292A5F6A001DC2D2 /* RxDataSources */; };
 		B6EBD1D8292A784C001DC2D2 /* AnimatedSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1D7292A784C001DC2D2 /* AnimatedSectionModel.swift */; };
 		B6EBD1DB292A86B3001DC2D2 /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1DA292A86B3001DC2D2 /* WordCollectionViewCell.swift */; };
+		B6EBD1DD292CFCB3001DC2D2 /* TempEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1DC292CFCB3001DC2D2 /* TempEntities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		B6EBD1D2292A5770001DC2D2 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		B6EBD1D7292A784C001DC2D2 /* AnimatedSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSectionModel.swift; sourceTree = "<group>"; };
 		B6EBD1DA292A86B3001DC2D2 /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6EBD1DC292CFCB3001DC2D2 /* TempEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempEntities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 			children = (
 				B6EBD1D9292A8699001DC2D2 /* Subviews */,
 				B6EBD1CC292A5748001DC2D2 /* WordViewModel.swift */,
+				B6EBD1DC292CFCB3001DC2D2 /* TempEntities.swift */,
 				B6EBD1CE292A574F001DC2D2 /* WordView.swift */,
 				B6EBD1D0292A575F001DC2D2 /* WordViewAssembly.swift */,
 				B6EBD1D2292A5770001DC2D2 /* WordViewController.swift */,
@@ -463,6 +466,7 @@
 				B66C8D06291949CA009B0055 /* ViewController.swift in Sources */,
 				B668747F29264A73002CB33B /* Completion.swift in Sources */,
 				B66C8D3B291962D1009B0055 /* Builder.swift in Sources */,
+				B6EBD1DD292CFCB3001DC2D2 /* TempEntities.swift in Sources */,
 				B6EBD1DB292A86B3001DC2D2 /* WordCollectionViewCell.swift in Sources */,
 				B66C8D2F29194EA0009B0055 /* MainViewModel.swift in Sources */,
 				B6EBD1C8292A5178001DC2D2 /* DetailTableViewCell.swift in Sources */,
