@@ -46,6 +46,7 @@ final class WordView: Viеw {
     override func configure() {
         backgroundColor = .white
         tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
+        configureSearchController()
         super.configure()
     }
     

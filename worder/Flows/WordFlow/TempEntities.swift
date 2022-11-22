@@ -11,8 +11,8 @@ import RxSwift
 final class APIProvider {
     
     func getRepos(_ id: String) -> Observable<[Repository]> {
-        guard id.isEmpty,
-              let url = URL(string: "https://api.github/users/\(id)/repos") else {
+        guard !id.isEmpty,
+              let url = URL(string: "https://api.github.com/users/\(id)/repos") else {
             return Observable.just([])
         }
         return URLSession.shared

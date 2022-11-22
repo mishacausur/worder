@@ -20,9 +20,8 @@ final class WordViewController: ViewController<WordView, WordViewModel> {
         configure()
         
         viewModel.data
-            .drive(mainView.tableView.rx.items(cellIdentifier: "Cell")) { _, repos, cell in
-            cell.textLabel?.text = repos.name
-            cell.detailTextLabel?.text = repos.url
+            .drive(mainView.tableView.rx.items(cellIdentifier: DetailTableViewCell.identifier)) { (_, repos, cell: DetailTableViewCell) in
+                cell.configureLabels(repos)
         }
             .disposed(by: viewModel.disposeBag)
         

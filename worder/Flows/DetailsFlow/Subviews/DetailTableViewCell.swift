@@ -46,4 +46,10 @@ class DetailTableViewCell: UITableViewCell {
         wordLabel.text = word.word
         translationLabel.text = word.translation
     }
+    
+    /// temp
+    func configureLabels(_ repository: Repository) {
+        wordLabel.text = repository.name
+        translationLabel.text = repository.url
+    }
 }
