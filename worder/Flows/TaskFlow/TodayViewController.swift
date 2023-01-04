@@ -5,4 +5,8 @@
 //  Created by Misha Causur on 04.01.2023.
 //
 
-import Foundation
+import class UIKit.UIViewController
+
+final class TodayViewController: ViewController<TodayView, TodayViewModel> {
+    
+}

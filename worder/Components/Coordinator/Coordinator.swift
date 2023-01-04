@@ -23,6 +23,10 @@ final class Coordinator: Coordinatable {
         startMainFlow()
     }
     
+    func startToday() {
+        startTodayFlow()
+    }
+    
     func route(_ destination: Route) {
         switch destination {
         case .addWord:
@@ -49,6 +53,11 @@ final class Coordinator: Coordinatable {
     private func startWordFlow(_ word: WordModel) {
         let wordModule = ModuleFactory.createWordModule(self, word: word)
         navigationController.pushViewController(wordModule.presentable, animated: true)
+    }
+    
+    private func startTodayFlow() {
+        let todayModule = ModuleFactory.createTodayModule(self)
+        navigationController.pushViewController(todayModule.presentable, animated: true)
     }
 }
 
