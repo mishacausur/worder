@@ -15,7 +15,8 @@ final class TodayView: Viеw {
     
     override func configure() {
         // register
-        collectionView.backgroundColor = .darkGray
+        backgroundColor = .white
+        collectionView.backgroundColor = .blue
         super.configure()
     }
     
