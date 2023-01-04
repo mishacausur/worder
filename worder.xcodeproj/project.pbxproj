@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62AD62C2965FC6500ED5409 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AD62B2965FC6500ED5409 /* TodayViewController.swift */; };
+		B62AD62E2965FC7900ED5409 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AD62D2965FC7900ED5409 /* TodayViewModel.swift */; };
 		B668747F29264A73002CB33B /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668747E29264A73002CB33B /* Completion.swift */; };
 		B66C8D02291949CA009B0055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D01291949CA009B0055 /* AppDelegate.swift */; };
 		B66C8D04291949CA009B0055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D03291949CA009B0055 /* SceneDelegate.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B62AD62B2965FC6500ED5409 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		B62AD62D2965FC7900ED5409 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		B668747E29264A73002CB33B /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		B66C8CFE291949CA009B0055 /* worder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = worder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66C8D01291949CA009B0055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B62AD62A2965FB5400ED5409 /* TaskFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B62AD62B2965FC6500ED5409 /* TodayViewController.swift */,
+				B62AD62D2965FC7900ED5409 /* TodayViewModel.swift */,
+			);
+			path = TaskFlow;
+			sourceTree = "<group>";
+		};
 		B66C8CF5291949CA009B0055 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +234,7 @@
 		B66C8D2C29194C43009B0055 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				B62AD62A2965FB5400ED5409 /* TaskFlow */,
 				B6EBD1CB292A5734001DC2D2 /* WordFlow */,
 				B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */,
 				B66C8D2D29194C4E009B0055 /* MainFlow */,
@@ -444,6 +458,7 @@
 			files = (
 				B6EBD1D1292A575F001DC2D2 /* WordViewAssembly.swift in Sources */,
 				B6EBD1D3292A5770001DC2D2 /* WordViewController.swift in Sources */,
+				B62AD62C2965FC6500ED5409 /* TodayViewController.swift in Sources */,
 				B6EBD1CD292A5748001DC2D2 /* WordViewModel.swift in Sources */,
 				B66C8D65291AEFA6009B0055 /* DataManager.swift in Sources */,
 				B66C8D48291974BB009B0055 /* NetworkService.swift in Sources */,
@@ -467,6 +482,7 @@
 				B668747F29264A73002CB33B /* Completion.swift in Sources */,
 				B66C8D3B291962D1009B0055 /* Builder.swift in Sources */,
 				B6EBD1DD292CFCB3001DC2D2 /* TempEntities.swift in Sources */,
+				B62AD62E2965FC7900ED5409 /* TodayViewModel.swift in Sources */,
 				B6EBD1DB292A86B3001DC2D2 /* WordCollectionViewCell.swift in Sources */,
 				B66C8D2F29194EA0009B0055 /* MainViewModel.swift in Sources */,
 				B6EBD1C8292A5178001DC2D2 /* DetailTableViewCell.swift in Sources */,
