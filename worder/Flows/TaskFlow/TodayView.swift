@@ -46,14 +46,7 @@ final class TodayView: Viеw {
     }
     
     private func register() {
-        let cellReg = UICollectionView.CellRegistration { (cell: UICollectionViewListCell,
-                                                           indexPath: IndexPath,
-                                                           itemIdentifier: String) in
-            let item = Reminder.sampleData[indexPath.item]
-            var defaultConfiguration = cell.defaultContentConfiguration()
-            defaultConfiguration.text = item.title
-            cell.contentConfiguration = defaultConfiguration
-        }
+        let cellReg = createCellConfiguration()
         
         dataSource = DataSource(collectionView: collectionView, cellProvider: {
             return $0.dequeueConfiguredReusableCell(using: cellReg, for: $1, item: $2)
@@ -65,5 +58,20 @@ final class TodayView: Viеw {
         dataSource.apply(snapshot)
         
         collectionView.dataSource = dataSource
+    }
+    
+    private func createCellConfiguration() -> UICollectionView.CellRegistration<UICollectionViewListCell, String> {
+        .init { (cell: UICollectionViewListCell,
+                 indexPath: IndexPath,
+                 itemIdentifier: String) in
+            let item = Reminder.sampleData[indexPath.item]
+            var defaultConfiguration = cell.defaultContentConfiguration()
+            defaultConfiguration.text = item.title
+            cell.contentConfiguration = defaultConfiguration
+            
+            var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
+            backgroundConfig.cornerRadius = 8
+            cell.backgroundConfiguration = backgroundConfig
+        }
     }
 }

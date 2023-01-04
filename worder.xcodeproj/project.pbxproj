@@ -12,6 +12,7 @@
 		B62AD6302965FCB900ED5409 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AD62F2965FCB900ED5409 /* TodayView.swift */; };
 		B62AD6322965FE4500ED5409 /* TodayViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AD6312965FE4500ED5409 /* TodayViewAssembly.swift */; };
 		B62AD6352966077900ED5409 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AD6342966077900ED5409 /* Reminder.swift */; };
+		B62AD637296614BC00ED5409 /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AD636296614BC00ED5409 /* Date+Today.swift */; };
 		B668747F29264A73002CB33B /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668747E29264A73002CB33B /* Completion.swift */; };
 		B66C8D02291949CA009B0055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D01291949CA009B0055 /* AppDelegate.swift */; };
 		B66C8D04291949CA009B0055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C8D03291949CA009B0055 /* SceneDelegate.swift */; };
@@ -74,6 +75,7 @@
 		B62AD62F2965FCB900ED5409 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		B62AD6312965FE4500ED5409 /* TodayViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewAssembly.swift; sourceTree = "<group>"; };
 		B62AD6342966077900ED5409 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		B62AD636296614BC00ED5409 /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
 		B668747E29264A73002CB33B /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		B66C8CFE291949CA009B0055 /* worder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = worder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66C8D01291949CA009B0055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				B62AD6342966077900ED5409 /* Reminder.swift */,
+				B62AD636296614BC00ED5409 /* Date+Today.swift */,
 			);
 			path = TaskFlowModels;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62AD6302965FCB900ED5409 /* TodayView.swift in Sources */,
+				B62AD637296614BC00ED5409 /* Date+Today.swift in Sources */,
 				B62AD6352966077900ED5409 /* Reminder.swift in Sources */,
 				B6EBD1D1292A575F001DC2D2 /* WordViewAssembly.swift in Sources */,
 				B6EBD1D3292A5770001DC2D2 /* WordViewController.swift in Sources */,
