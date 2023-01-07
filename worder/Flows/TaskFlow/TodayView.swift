@@ -20,7 +20,7 @@ final class TodayView: Viеw {
     override func configure() {
         collectionView.collectionViewLayout = listLayout()
         
-        backgroundColor = .white
+        backgroundColor = .todayListCellBackground
         
         let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         register(cellReg)

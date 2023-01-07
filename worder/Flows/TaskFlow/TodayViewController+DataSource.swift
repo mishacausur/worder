@@ -20,8 +20,8 @@ extension TodayView {
         defaultConfiguration.secondaryText = item.dueDate.dateAndTimeText
         defaultConfiguration.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .caption1)
         cell.contentConfiguration = defaultConfiguration
-        var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
-        backgroundConfig.cornerRadius = 8
+        var backgroundConfig = UIBackgroundConfiguration.listGroupedCell()
+        backgroundConfig.backgroundColor = .todayListCellBackground
         cell.backgroundConfiguration = backgroundConfig
     }
 }
