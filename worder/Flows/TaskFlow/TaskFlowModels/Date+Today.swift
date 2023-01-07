@@ -16,7 +16,7 @@ extension Date {
             return String(format: timeFormat, timeText)
         case false:
             let dateText = formatted(.dateTime.month(.abbreviated).day())
-            let dateAndTimeFormat = NSLocalizedString("%@ at $@", comment: "date and time")
+            let dateAndTimeFormat = NSLocalizedString("%@ at %@", comment: "date and time")
             return String(format: dateAndTimeFormat, dateText, timeText)
         }
     }

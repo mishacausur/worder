@@ -10,10 +10,7 @@ import UIKit.UIDiffableDataSource
 import class UIKit.UIView
 
 final class TodayView: Viеw {
-    
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
-    typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
-    
+
     var dataSource: DataSource!
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).configure {
@@ -22,8 +19,11 @@ final class TodayView: Viеw {
     
     override func configure() {
         collectionView.collectionViewLayout = listLayout()
-        register()
+        
         backgroundColor = .white
+        
+        let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
+        register(cellReg)
         super.configure()
     }
     
@@ -45,11 +45,10 @@ final class TodayView: Viеw {
         return .list(using: listConf)
     }
     
-    private func register() {
-        let cellReg = createCellConfiguration()
-        
+    private func register(_ using: UICollectionView.CellRegistration<UICollectionViewListCell, String>) {
+       
         dataSource = DataSource(collectionView: collectionView, cellProvider: {
-            return $0.dequeueConfiguredReusableCell(using: cellReg, for: $1, item: $2)
+            return $0.dequeueConfiguredReusableCell(using: using, for: $1, item: $2)
         })
         
         var snapshot = SnapShot()
@@ -58,20 +57,5 @@ final class TodayView: Viеw {
         dataSource.apply(snapshot)
         
         collectionView.dataSource = dataSource
-    }
-    
-    private func createCellConfiguration() -> UICollectionView.CellRegistration<UICollectionViewListCell, String> {
-        .init { (cell: UICollectionViewListCell,
-                 indexPath: IndexPath,
-                 itemIdentifier: String) in
-            let item = Reminder.sampleData[indexPath.item]
-            var defaultConfiguration = cell.defaultContentConfiguration()
-            defaultConfiguration.text = item.title
-            cell.contentConfiguration = defaultConfiguration
-            
-            var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
-            backgroundConfig.cornerRadius = 8
-            cell.backgroundConfiguration = backgroundConfig
-        }
     }
 }
