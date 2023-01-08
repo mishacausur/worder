@@ -5,7 +5,8 @@
 //  Created by Misha Causur on 08.01.2023.
 //
 
-import UIKit
+import class UIKit.UIImage
+import class UIKit.UIFont
 
 extension TodayItemViewController {
     enum Row: Hashable {

@@ -7,6 +7,7 @@
 
 extension String {
     static let words = "Words"
+    static let empty = ""
 }
 
 extension String {
