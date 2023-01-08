@@ -53,12 +53,7 @@ final class TodayView: Viеw {
                                                                                  itemIdentifier: Reminder.ID) in
             return collectionView.dequeueConfiguredReusableCell(using: using, for: indexPath, item: itemIdentifier)
         })
-        
-        var snapshot = SnapShot()
-        snapshot.appendSections([0])
-        snapshot.appendItems(reminders.map { $0.id })
-        dataSource.apply(snapshot)
-        
+        updateSnapshot()
         collectionView.dataSource = dataSource
     }
 }

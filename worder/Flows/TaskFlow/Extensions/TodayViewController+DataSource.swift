@@ -52,5 +52,16 @@ extension TodayView {
         var item = getItem(with: id)
         item.isComplete.toggle()
         updateItem(item, with: id)
+        updateSnapshot(for: [id])
+    }
+    
+    func updateSnapshot(for items: [Reminder.ID] = []) {
+        var snapshot = SnapShot()
+        snapshot.appendSections([0])
+        snapshot.appendItems(reminders.map { $0.id })
+        if !items.isEmpty {
+            snapshot.reloadItems(items)
+        }
+        dataSource.apply(snapshot)
     }
 }
