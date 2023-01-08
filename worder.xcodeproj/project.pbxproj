@@ -55,6 +55,8 @@
 		B6AB77232969EFAD007BB88B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB77222969EFAD007BB88B /* UIColor.swift */; };
 		B6AB7726296AF9DE007BB88B /* TodayCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7725296AF9DE007BB88B /* TodayCheckButton.swift */; };
 		B6AB7729296AFAD0007BB88B /* TodayViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7728296AFAD0007BB88B /* TodayViewController+Action.swift */; };
+		B6AB772C296B124F007BB88B /* TodayItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB772B296B124F007BB88B /* TodayItemViewController.swift */; };
+		B6AB772E296B1267007BB88B /* TodayItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB772D296B1267007BB88B /* TodayItemViewModel.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
@@ -119,6 +121,8 @@
 		B6AB77222969EFAD007BB88B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B6AB7725296AF9DE007BB88B /* TodayCheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckButton.swift; sourceTree = "<group>"; };
 		B6AB7728296AFAD0007BB88B /* TodayViewController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayViewController+Action.swift"; sourceTree = "<group>"; };
+		B6AB772B296B124F007BB88B /* TodayItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemViewController.swift; sourceTree = "<group>"; };
+		B6AB772D296B1267007BB88B /* TodayItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 		B66C8D2C29194C43009B0055 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				B6AB772A296B11F7007BB88B /* TaskDetailFlow */,
 				B62AD62A2965FB5400ED5409 /* TaskFlow */,
 				B6EBD1CB292A5734001DC2D2 /* WordFlow */,
 				B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */,
@@ -375,6 +380,15 @@
 				B6AB7728296AFAD0007BB88B /* TodayViewController+Action.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B6AB772A296B11F7007BB88B /* TaskDetailFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB772B296B124F007BB88B /* TodayItemViewController.swift */,
+				B6AB772D296B1267007BB88B /* TodayItemViewModel.swift */,
+			);
+			path = TaskDetailFlow;
 			sourceTree = "<group>";
 		};
 		B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */ = {
@@ -527,6 +541,7 @@
 				B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */,
 				B66C8D5A291A9D19009B0055 /* AuthService.swift in Sources */,
 				B66C8D5C291A9E37009B0055 /* AuthError.swift in Sources */,
+				B6AB772E296B1267007BB88B /* TodayItemViewModel.swift in Sources */,
 				B66C8D1829194A86009B0055 /* View.swift in Sources */,
 				B66C8D3D291962E9009B0055 /* Layout.swift in Sources */,
 				B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */,
@@ -545,6 +560,7 @@
 				B66C8D4C291976D9009B0055 /* LoaderService.swift in Sources */,
 				B66C8D2B29194BB3009B0055 /* Presentable.swift in Sources */,
 				B66C8D2929194BA0009B0055 /* ModuleFactory.swift in Sources */,
+				B6AB772C296B124F007BB88B /* TodayItemViewController.swift in Sources */,
 				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
 				B6EBD1CA292A5695001DC2D2 /* String.swift in Sources */,
 				B6EBD1D8292A784C001DC2D2 /* AnimatedSectionModel.swift in Sources */,

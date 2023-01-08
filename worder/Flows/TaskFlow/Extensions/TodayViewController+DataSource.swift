@@ -9,8 +9,16 @@ import UIKit.UICollectionView
 import UIKit.UIDiffableDataSource
 
 extension TodayView {
+    
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
     typealias SnapShot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
+    
+    var reminderCompletedValue: String {
+        NSLocalizedString("Completed", comment: "Reminder completed value")
+    }
+    var reminderNotCompletedValue: String {
+        NSLocalizedString("Not completed", comment: "Reminder not completed value")
+    }
     
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
         
@@ -22,6 +30,8 @@ extension TodayView {
         cell.contentConfiguration = defaultConfiguration
         var doneConf = doneItemConfiguration(for: item)
         doneConf.tintColor = .todayListCellDoneButtonTint
+        cell.accessibilityCustomActions = [ doneButtonAccessibilityAction(for: item) ]
+        cell.accessibilityValue = item.isComplete ? reminderCompletedValue : reminderNotCompletedValue
         cell.accessories = [.customView(configuration: doneConf), .disclosureIndicator(displayed: .always)]
         var backgroundConfig = UIBackgroundConfiguration.listGroupedCell()
         backgroundConfig.backgroundColor = .todayListCellBackground
@@ -63,5 +73,14 @@ extension TodayView {
             snapshot.reloadItems(items)
         }
         dataSource.apply(snapshot)
+    }
+    
+    private func doneButtonAccessibilityAction(for reminder: Reminder) -> UIAccessibilityCustomAction {
+        let name = NSLocalizedString("Toggle completion", comment: "Reminder done button accessibility label")
+        let action = UIAccessibilityCustomAction(name: name) { [weak self] _ in
+            self?.completeItem(with: reminder.id)
+            return true
+        }
+        return action
     }
 }
