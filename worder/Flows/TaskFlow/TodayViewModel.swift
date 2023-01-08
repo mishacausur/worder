@@ -6,5 +6,7 @@
 //
 
 final class TodayViewModel: ViewModel {
-    
+    func corrdinateDetails(wirh item: Reminder) {
+        coordinator?.route(.todayDetail(item))
+    }
 }

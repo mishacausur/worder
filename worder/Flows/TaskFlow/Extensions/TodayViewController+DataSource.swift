@@ -50,7 +50,7 @@ extension TodayView {
         return .init(customView: button, placement: .leading(displayed: .always))
     }
     
-    private func getItem(with id: Reminder.ID) -> Reminder {
+    internal func getItem(with id: Reminder.ID) -> Reminder {
         reminders[reminders.reminderIndex(with: id)]
     }
     

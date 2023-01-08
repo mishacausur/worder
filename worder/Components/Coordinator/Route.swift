@@ -10,4 +10,5 @@ enum Route {
     case dismiss
     case details([WordModel])
     case word(WordModel)
+    case todayDetail(Reminder)
 }

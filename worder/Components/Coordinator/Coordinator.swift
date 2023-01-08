@@ -37,6 +37,8 @@ final class Coordinator: Coordinatable {
             startDetailFlow(words)
         case .word(let word):
             startWordFlow(word)
+        case .todayDetail(let item):
+            startTodayDetailsFlow(item)
         }
     }
     
@@ -58,6 +60,11 @@ final class Coordinator: Coordinatable {
     private func startTodayFlow() {
         let todayModule = ModuleFactory.createTodayModule(self)
         navigationController.pushViewController(todayModule.presentable, animated: true)
+    }
+    
+    private func startTodayDetailsFlow(_ item: Reminder) {
+        let vc = TodayItemViewController(reminder: item)
+        navigationController.pushViewController(vc, animated: true)
     }
 }
 

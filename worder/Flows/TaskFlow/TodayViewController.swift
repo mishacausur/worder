@@ -8,5 +8,9 @@
 import class UIKit.UIViewController
 
 final class TodayViewController: ViewController<TodayView, TodayViewModel> {
-    
+    override func viewDidLoad() {
+        mainView.modelDidSelect = { [weak viewModel] in
+            viewModel?.corrdinateDetails(wirh: $0)
+        }
+    }
 }

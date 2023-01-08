@@ -12,6 +12,7 @@ import class UIKit.UICollectionViewController
 final class TodayItemViewController: UICollectionViewController {
     
     private typealias DataSource = UICollectionViewDiffableDataSource<Int, Row>
+    private typealias SnapShot = NSDiffableDataSourceSnapshot<Int, Row>
     private var dataSource: DataSource!
     var reminder: Reminder
     
@@ -32,6 +33,14 @@ final class TodayItemViewController: UICollectionViewController {
         dataSource = .init(collectionView: collectionView, cellProvider: {
             return $0.dequeueConfiguredReusableCell(using: cellReg, for: $1, item: $2)
         })
+        updateSnapshot()
+    }
+    
+    private func updateSnapshot() {
+        var snapShot = SnapShot()
+        snapShot.appendSections([0])
+        snapShot.appendItems([.title, .date, .note, .time], toSection: 0)
+        dataSource.apply(snapShot)
     }
     
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {

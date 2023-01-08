@@ -10,7 +10,7 @@ import UIKit.UIDiffableDataSource
 import class UIKit.UIView
 
 final class TodayView: Viеw {
-
+    var modelDidSelect: ((Reminder) -> Void)?
     var dataSource: DataSource!
     var reminders = Reminder.sampleData
     
@@ -20,9 +20,8 @@ final class TodayView: Viеw {
     
     override func configure() {
         collectionView.collectionViewLayout = listLayout()
-        
+        collectionView.delegate = self
         backgroundColor = .todayListCellBackground
-        
         let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         register(cellReg)
         super.configure()
@@ -55,5 +54,18 @@ final class TodayView: Viеw {
         })
         updateSnapshot()
         collectionView.dataSource = dataSource
+    }
+    
+    private func showDetail(for id: Reminder.ID) {
+        let item = getItem(with: id)
+        modelDidSelect?(item)
+    }
+}
+
+extension TodayView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let id = reminders[indexPath.row].id
+        showDetail(for: id)
+        return false
     }
 }
