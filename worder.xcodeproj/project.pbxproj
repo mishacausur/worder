@@ -61,6 +61,8 @@
 		B6AB7733296B3487007BB88B /* TodayItemrViewController+Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7732296B3487007BB88B /* TodayItemrViewController+Section.swift */; };
 		B6AB7735296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7734296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift */; };
 		B6AB7738296B4301007BB88B /* UIView+PinnedSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */; };
+		B6AB773A296B4CF8007BB88B /* TextFieldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7739296B4CF8007BB88B /* TextFieldContentView.swift */; };
+		B6AB773C296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
@@ -131,6 +133,8 @@
 		B6AB7732296B3487007BB88B /* TodayItemrViewController+Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayItemrViewController+Section.swift"; sourceTree = "<group>"; };
 		B6AB7734296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayItemViewController+CellConfiguration.swift"; sourceTree = "<group>"; };
 		B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PinnedSubview.swift"; sourceTree = "<group>"; };
+		B6AB7739296B4CF8007BB88B /* TextFieldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContentView.swift; sourceTree = "<group>"; };
+		B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentConfiguration+Stateless.swift"; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -415,6 +419,8 @@
 			isa = PBXGroup;
 			children = (
 				B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */,
+				B6AB7739296B4CF8007BB88B /* TextFieldContentView.swift */,
+				B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */,
 			);
 			path = ContentViews;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				B6AB7729296AFAD0007BB88B /* TodayViewController+Action.swift in Sources */,
 				B6EBD1D3292A5770001DC2D2 /* WordViewController.swift in Sources */,
 				B62AD62C2965FC6500ED5409 /* TodayViewController.swift in Sources */,
+				B6AB773C296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift in Sources */,
 				B6EBD1CD292A5748001DC2D2 /* WordViewModel.swift in Sources */,
 				B66C8D65291AEFA6009B0055 /* DataManager.swift in Sources */,
 				B66C8D48291974BB009B0055 /* NetworkService.swift in Sources */,
@@ -592,6 +599,7 @@
 				B66C8D4C291976D9009B0055 /* LoaderService.swift in Sources */,
 				B66C8D2B29194BB3009B0055 /* Presentable.swift in Sources */,
 				B66C8D2929194BA0009B0055 /* ModuleFactory.swift in Sources */,
+				B6AB773A296B4CF8007BB88B /* TextFieldContentView.swift in Sources */,
 				B6AB772C296B124F007BB88B /* TodayItemViewController.swift in Sources */,
 				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
 				B6EBD1CA292A5695001DC2D2 /* String.swift in Sources */,

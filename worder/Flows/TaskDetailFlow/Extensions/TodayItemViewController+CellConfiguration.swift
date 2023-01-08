@@ -39,4 +39,10 @@ extension TodayItemViewController {
             return nil
         }
     }
+    
+    func titleConfiguration(for cell: UICollectionViewListCell, with title: String?) -> TextFieldContentView.Configuration {
+        var conf = cell.textFieldConfiguration()
+        conf.text = title
+        return conf
+    }
 }
