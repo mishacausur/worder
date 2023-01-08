@@ -12,6 +12,7 @@ import class UIKit.UIView
 final class TodayView: Viеw {
 
     var dataSource: DataSource!
+    var reminders = Reminder.sampleData
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -47,13 +48,15 @@ final class TodayView: Viеw {
     
     private func register(_ using: UICollectionView.CellRegistration<UICollectionViewListCell, String>) {
        
-        dataSource = DataSource(collectionView: collectionView, cellProvider: {
-            return $0.dequeueConfiguredReusableCell(using: using, for: $1, item: $2)
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView,
+                                                                                 indexPath: IndexPath,
+                                                                                 itemIdentifier: Reminder.ID) in
+            return collectionView.dequeueConfiguredReusableCell(using: using, for: indexPath, item: itemIdentifier)
         })
         
         var snapshot = SnapShot()
         snapshot.appendSections([0])
-        snapshot.appendItems(Reminder.sampleData.map { $0.title })
+        snapshot.appendItems(reminders.map { $0.id })
         dataSource.apply(snapshot)
         
         collectionView.dataSource = dataSource

@@ -9,12 +9,12 @@ import UIKit.UICollectionView
 import UIKit.UIDiffableDataSource
 
 extension TodayView {
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
-    typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
+    typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
+    typealias SnapShot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
     
-    func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: String) {
+    func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
         
-        let item = Reminder.sampleData[indexPath.item]
+        let item = reminders[indexPath.item]
         var defaultConfiguration = cell.defaultContentConfiguration()
         defaultConfiguration.text = item.title
         defaultConfiguration.secondaryText = item.dueDate.dateAndTimeText
@@ -34,6 +34,7 @@ extension TodayView {
         let image = UIImage(systemName: iconName, withConfiguration: symbolConfiguration)
         let button = UIButton()
         button.setImage(image, for: .normal)
+        button.setImage(.init(named: "gear"), for: .highlighted)
         return .init(customView: button, placement: .leading(displayed: .always))
         
         
