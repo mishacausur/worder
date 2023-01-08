@@ -20,6 +20,7 @@ final class TodayItemViewController: UICollectionViewController {
         self.reminder = reminder
         var listConf = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConf.showsSeparators = false
+        listConf.headerMode = .firstItemInSection
         let listLayout = UICollectionViewCompositionalLayout.list(using: listConf)
         super.init(collectionViewLayout: listLayout)
     }
@@ -50,13 +51,16 @@ final class TodayItemViewController: UICollectionViewController {
     private func updateSnapshotViewing() {
         var snapShot = SnapShot()
         snapShot.appendSections([.view])
-        snapShot.appendItems([.title, .date, .note, .time], toSection: .view)
+        snapShot.appendItems([.header(.empty), .title, .date, .note, .time], toSection: .view)
         dataSource.apply(snapShot)
     }
     
     private func updateSnapShotEditing() {
         var snapshot = SnapShot()
         snapshot.appendSections([.title, .date, .note])
+        snapshot.appendItems([.header(Section.title.name)], toSection: .title)
+        snapshot.appendItems([.header(Section.date.name)], toSection: .date)
+        snapshot.appendItems([.header(Section.note.name)], toSection: .note)
         dataSource.apply(snapshot)
     }
     
@@ -72,27 +76,12 @@ final class TodayItemViewController: UICollectionViewController {
         let section = section(for: indexPath)
         switch (section, row) {
         case (.view, _):
-            var conf = cell.defaultContentConfiguration()
-            conf.text = getText(for: row)
-            conf.textProperties.font = UIFont.preferredFont(forTextStyle: row.textStyle)
-            conf.image = row.image
-            cell.contentConfiguration = conf
+            cell.contentConfiguration = defaultConfiguration(for: cell, at: row)
+        case (_, .header(let title)):
+            cell.contentConfiguration = headerConfiguration(for: cell, with: title)
         default:
             fatalError("unexpected section and row")
         }
         cell.tintColor = .todayPrimaryTint
-    }
-    
-    func getText(for row: Row) -> String? {
-        switch row {
-        case .date:
-            return reminder.dueDate.dayText
-        case .note:
-            return reminder.notes
-        case .time:
-            return reminder.dueDate.formatted(date: .omitted, time: .shortened)
-        case .title:
-            return reminder.title
-        }
     }
 }

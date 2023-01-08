@@ -10,6 +10,7 @@ import class UIKit.UIFont
 
 extension TodayItemViewController {
     enum Row: Hashable {
+        case header(String)
         case date
         case note
         case time

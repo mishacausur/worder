@@ -59,6 +59,8 @@
 		B6AB772E296B1267007BB88B /* TodayItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB772D296B1267007BB88B /* TodayItemViewModel.swift */; };
 		B6AB7731296B1606007BB88B /* TodayItemViewController+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7730296B1606007BB88B /* TodayItemViewController+Row.swift */; };
 		B6AB7733296B3487007BB88B /* TodayItemrViewController+Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7732296B3487007BB88B /* TodayItemrViewController+Section.swift */; };
+		B6AB7735296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7734296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift */; };
+		B6AB7738296B4301007BB88B /* UIView+PinnedSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
@@ -127,6 +129,8 @@
 		B6AB772D296B1267007BB88B /* TodayItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemViewModel.swift; sourceTree = "<group>"; };
 		B6AB7730296B1606007BB88B /* TodayItemViewController+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayItemViewController+Row.swift"; sourceTree = "<group>"; };
 		B6AB7732296B3487007BB88B /* TodayItemrViewController+Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayItemrViewController+Section.swift"; sourceTree = "<group>"; };
+		B6AB7734296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayItemViewController+CellConfiguration.swift"; sourceTree = "<group>"; };
+		B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PinnedSubview.swift"; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 		B6AB772A296B11F7007BB88B /* TaskDetailFlow */ = {
 			isa = PBXGroup;
 			children = (
+				B6AB7736296B42D8007BB88B /* ContentViews */,
 				B6AB772F296B15F3007BB88B /* Extensions */,
 				B6AB772B296B124F007BB88B /* TodayItemViewController.swift */,
 				B6AB772D296B1267007BB88B /* TodayItemViewModel.swift */,
@@ -401,8 +406,17 @@
 			children = (
 				B6AB7730296B1606007BB88B /* TodayItemViewController+Row.swift */,
 				B6AB7732296B3487007BB88B /* TodayItemrViewController+Section.swift */,
+				B6AB7734296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B6AB7736296B42D8007BB88B /* ContentViews */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */,
+			);
+			path = ContentViews;
 			sourceTree = "<group>";
 		};
 		B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */ = {
@@ -556,9 +570,11 @@
 				B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */,
 				B66C8D5A291A9D19009B0055 /* AuthService.swift in Sources */,
 				B66C8D5C291A9E37009B0055 /* AuthError.swift in Sources */,
+				B6AB7738296B4301007BB88B /* UIView+PinnedSubview.swift in Sources */,
 				B6AB772E296B1267007BB88B /* TodayItemViewModel.swift in Sources */,
 				B66C8D1829194A86009B0055 /* View.swift in Sources */,
 				B66C8D3D291962E9009B0055 /* Layout.swift in Sources */,
+				B6AB7735296B412B007BB88B /* TodayItemViewController+CellConfiguration.swift in Sources */,
 				B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */,
 				B66C8D2629194B4A009B0055 /* Module.swift in Sources */,
 				B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */,
