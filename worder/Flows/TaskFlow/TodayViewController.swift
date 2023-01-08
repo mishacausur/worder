@@ -12,5 +12,6 @@ final class TodayViewController: ViewController<TodayView, TodayViewModel> {
         mainView.modelDidSelect = { [weak viewModel] in
             viewModel?.corrdinateDetails(wirh: $0)
         }
+        title = "Today Me"
     }
 }

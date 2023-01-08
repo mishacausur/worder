@@ -21,7 +21,7 @@ final class TodayView: Viеw {
     override func configure() {
         collectionView.collectionViewLayout = listLayout()
         collectionView.delegate = self
-        backgroundColor = .todayListCellBackground
+        backgroundColor = .todayNavigationBackground
         let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         register(cellReg)
         super.configure()
