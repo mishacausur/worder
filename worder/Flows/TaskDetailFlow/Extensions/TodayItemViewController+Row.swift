@@ -15,6 +15,7 @@ extension TodayItemViewController {
         case note
         case time
         case title
+        case editText(String)
         
         var imageName: String? {
             switch self {

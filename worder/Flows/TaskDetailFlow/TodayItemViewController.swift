@@ -58,7 +58,7 @@ final class TodayItemViewController: UICollectionViewController {
     private func updateSnapShotEditing() {
         var snapshot = SnapShot()
         snapshot.appendSections([.title, .date, .note])
-        snapshot.appendItems([.header(Section.title.name)], toSection: .title)
+        snapshot.appendItems([.header(Section.title.name), .editText(reminder.title)], toSection: .title)
         snapshot.appendItems([.header(Section.date.name)], toSection: .date)
         snapshot.appendItems([.header(Section.note.name)], toSection: .note)
         dataSource.apply(snapshot)
@@ -79,6 +79,8 @@ final class TodayItemViewController: UICollectionViewController {
             cell.contentConfiguration = defaultConfiguration(for: cell, at: row)
         case (_, .header(let title)):
             cell.contentConfiguration = headerConfiguration(for: cell, with: title)
+        case (.title, .editText(let title)):
+            cell.contentConfiguration = titleConfiguration(for: cell, with: title)
         default:
             fatalError("unexpected section and row")
         }
