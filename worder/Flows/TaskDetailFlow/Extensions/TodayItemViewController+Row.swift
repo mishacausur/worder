@@ -5,6 +5,7 @@
 //  Created by Misha Causur on 08.01.2023.
 //
 
+import Foundation.NSDate
 import class UIKit.UIImage
 import class UIKit.UIFont
 
@@ -15,7 +16,8 @@ extension TodayItemViewController {
         case note
         case time
         case title
-        case editText(String)
+        case editText(String?)
+        case editDate(Date)
         
         var imageName: String? {
             switch self {

@@ -59,8 +59,8 @@ final class TodayItemViewController: UICollectionViewController {
         var snapshot = SnapShot()
         snapshot.appendSections([.title, .date, .note])
         snapshot.appendItems([.header(Section.title.name), .editText(reminder.title)], toSection: .title)
-        snapshot.appendItems([.header(Section.date.name)], toSection: .date)
-        snapshot.appendItems([.header(Section.note.name)], toSection: .note)
+        snapshot.appendItems([.header(Section.date.name), .editDate(reminder.dueDate)], toSection: .date)
+        snapshot.appendItems([.header(Section.note.name), .editText(reminder.notes)], toSection: .note)
         dataSource.apply(snapshot)
     }
     
@@ -81,6 +81,10 @@ final class TodayItemViewController: UICollectionViewController {
             cell.contentConfiguration = headerConfiguration(for: cell, with: title)
         case (.title, .editText(let title)):
             cell.contentConfiguration = titleConfiguration(for: cell, with: title)
+        case(.date, .editDate(let date)):
+            cell.contentConfiguration = dateConfiguration(for: cell, with: date)
+        case (.note, .editText(let notes)):
+            cell.contentConfiguration = textConfiguration(for: cell, with: notes)
         default:
             fatalError("unexpected section and row")
         }

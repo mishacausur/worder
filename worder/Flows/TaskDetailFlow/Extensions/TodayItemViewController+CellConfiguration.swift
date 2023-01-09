@@ -5,6 +5,7 @@
 //  Created by Misha Causur on 08.01.2023.
 //
 
+import Foundation.NSDate
 import struct UIKit.UIListContentConfiguration
 import class UIKit.UICollectionViewListCell
 import class UIKit.UIFont
@@ -43,6 +44,18 @@ extension TodayItemViewController {
     func titleConfiguration(for cell: UICollectionViewListCell, with title: String?) -> TextFieldContentView.Configuration {
         var conf = cell.textFieldConfiguration()
         conf.text = title
+        return conf
+    }
+    
+    func dateConfiguration(for cell: UICollectionViewListCell, with date: Date) -> DatePickerContentView.Configuration {
+        var conf = cell.datePickerConfiguration()
+        conf.date = date
+        return conf
+    }
+    
+    func textConfiguration(for cell: UICollectionViewListCell, with notes: String?) -> TextViewContentView.Configuration {
+        var conf = cell.textViewConfiguration()
+        conf.title = notes
         return conf
     }
 }
