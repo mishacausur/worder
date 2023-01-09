@@ -24,7 +24,12 @@ final class TextViewContentView: UIView & UIContentView {
         }
     }
     
-    var configuration: UIContentConfiguration
+    var configuration: UIContentConfiguration {
+        didSet {
+            configure(configuration)
+        }
+    }
+    
     private let textView = UITextView()
     
     override var intrinsicContentSize: CGSize {
@@ -34,11 +39,17 @@ final class TextViewContentView: UIView & UIContentView {
     init(_ configuration: UIContentConfiguration) {
         self.configuration = configuration
         super.init(frame: .zero)
-        addPinnedSubview(textView, insets: .init(top: 0, left: 16, bottom: 0, right: 16))
+        setup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        addPinnedSubview(textView, height: 200)
+        textView.backgroundColor = nil
+        textView.font = .preferredFont(forTextStyle: .body)
     }
     
     func configure(_ configuration: UIContentConfiguration) {
