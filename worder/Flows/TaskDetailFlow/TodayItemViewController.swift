@@ -13,11 +13,14 @@ final class TodayItemViewController: UICollectionViewController {
     
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Row>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Row>
+    
     private var dataSource: DataSource!
     var reminder: Reminder
+    var workingReminder: Reminder
     
     init(reminder: Reminder) {
         self.reminder = reminder
+        workingReminder = reminder
         var listConf = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConf.showsSeparators = false
         listConf.headerMode = .firstItemInSection
@@ -42,9 +45,9 @@ final class TodayItemViewController: UICollectionViewController {
         super.setEditing(editing, animated: animated)
         switch editing {
         case true:
-            updateSnapShotEditing()
+            prepareForEditing()
         case false:
-            updateSnapshotViewing()
+            prepareForViewing()
         }
     }
     
@@ -89,5 +92,16 @@ final class TodayItemViewController: UICollectionViewController {
             fatalError("unexpected section and row")
         }
         cell.tintColor = .todayPrimaryTint
+    }
+    
+    private func prepareForViewing() {
+        if workingReminder != reminder {
+            reminder = workingReminder
+        }
+        updateSnapshotViewing()
+    }
+    
+    private func prepareForEditing() {
+        updateSnapShotEditing()
     }
 }

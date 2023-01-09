@@ -44,18 +44,29 @@ extension TodayItemViewController {
     func titleConfiguration(for cell: UICollectionViewListCell, with title: String?) -> TextFieldContentView.Configuration {
         var conf = cell.textFieldConfiguration()
         conf.text = title
+        conf.onChange = { [weak self] in
+            self?.workingReminder.title = $0
+        }
+        
         return conf
     }
     
     func dateConfiguration(for cell: UICollectionViewListCell, with date: Date) -> DatePickerContentView.Configuration {
         var conf = cell.datePickerConfiguration()
         conf.date = date
+        conf.onChange = { [weak self] in
+            self?.workingReminder.dueDate = $0
+        }
+        
         return conf
     }
     
     func textConfiguration(for cell: UICollectionViewListCell, with notes: String?) -> TextViewContentView.Configuration {
         var conf = cell.textViewConfiguration()
         conf.title = notes
+        conf.onChange = { [weak self] in
+            self?.workingReminder.notes = $0
+        }
         return conf
     }
 }
