@@ -63,6 +63,7 @@
 		B6AB7738296B4301007BB88B /* UIView+PinnedSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */; };
 		B6AB773A296B4CF8007BB88B /* TextFieldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7739296B4CF8007BB88B /* TextFieldContentView.swift */; };
 		B6AB773C296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */; };
+		B6AB773E296C969F007BB88B /* TextViewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB773D296C969F007BB88B /* TextViewContentView.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
@@ -135,6 +136,7 @@
 		B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PinnedSubview.swift"; sourceTree = "<group>"; };
 		B6AB7739296B4CF8007BB88B /* TextFieldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContentView.swift; sourceTree = "<group>"; };
 		B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentConfiguration+Stateless.swift"; sourceTree = "<group>"; };
+		B6AB773D296C969F007BB88B /* TextViewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContentView.swift; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			children = (
 				B6AB7737296B4301007BB88B /* UIView+PinnedSubview.swift */,
 				B6AB7739296B4CF8007BB88B /* TextFieldContentView.swift */,
+				B6AB773D296C969F007BB88B /* TextViewContentView.swift */,
 				B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */,
 			);
 			path = ContentViews;
@@ -576,6 +579,7 @@
 				B6AB7733296B3487007BB88B /* TodayItemrViewController+Section.swift in Sources */,
 				B66C8D62291AEEC8009B0055 /* WordType.swift in Sources */,
 				B66C8D5A291A9D19009B0055 /* AuthService.swift in Sources */,
+				B6AB773E296C969F007BB88B /* TextViewContentView.swift in Sources */,
 				B66C8D5C291A9E37009B0055 /* AuthError.swift in Sources */,
 				B6AB7738296B4301007BB88B /* UIView+PinnedSubview.swift in Sources */,
 				B6AB772E296B1267007BB88B /* TodayItemViewModel.swift in Sources */,
