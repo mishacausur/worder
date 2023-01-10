@@ -15,11 +15,17 @@ final class TodayItemViewController: UICollectionViewController {
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Row>
     
     private var dataSource: DataSource!
-    var reminder: Reminder
+    var reminder: Reminder {
+        didSet {
+            onChange(reminder)
+        }
+    }
     var workingReminder: Reminder
+    var onChange: (Reminder) -> Void
     
-    init(reminder: Reminder) {
+    init(reminder: Reminder, onChange: @escaping (Reminder) -> Void) {
         self.reminder = reminder
+        self.onChange = onChange
         workingReminder = reminder
         var listConf = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConf.showsSeparators = false

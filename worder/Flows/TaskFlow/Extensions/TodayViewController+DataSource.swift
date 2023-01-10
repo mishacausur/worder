@@ -54,7 +54,7 @@ extension TodayView {
         reminders[reminders.reminderIndex(with: id)]
     }
     
-    private func updateItem(_ item: Reminder, with id: Reminder.ID) {
+    internal func updateItem(_ item: Reminder, with id: Reminder.ID) {
         reminders[reminders.reminderIndex(with: id)] = item
     }
     

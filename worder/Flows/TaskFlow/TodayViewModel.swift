@@ -6,7 +6,7 @@
 //
 
 final class TodayViewModel: ViewModel {
-    func corrdinateDetails(wirh item: Reminder) {
-        coordinator?.route(.todayDetail(item))
+    func coordinateDetails(with item: Reminder, onChange: @escaping (Reminder) -> Void) {
+        coordinator?.route(.todayDetail(item, onChange: onChange))
     }
 }

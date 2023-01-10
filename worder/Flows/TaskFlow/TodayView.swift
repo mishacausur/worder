@@ -10,7 +10,7 @@ import UIKit.UIDiffableDataSource
 import class UIKit.UIView
 
 final class TodayView: Viеw {
-    var modelDidSelect: ((Reminder) -> Void)?
+    var modelDidSelect: ((Reminder, @escaping (Reminder) -> Void) -> Void)?
     var dataSource: DataSource!
     var reminders = Reminder.sampleData
     
@@ -58,7 +58,11 @@ final class TodayView: Viеw {
     
     private func showDetail(for id: Reminder.ID) {
         let item = getItem(with: id)
-        modelDidSelect?(item)
+        let updateHandler: (Reminder) -> Void = { [weak self] in
+            self?.updateItem($0, with: $0.id)
+            self?.updateSnapshot(for: [$0.id])
+        }
+        modelDidSelect?(item, updateHandler)
     }
 }
 

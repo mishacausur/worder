@@ -37,8 +37,8 @@ final class Coordinator: Coordinatable {
             startDetailFlow(words)
         case .word(let word):
             startWordFlow(word)
-        case .todayDetail(let item):
-            startTodayDetailsFlow(item)
+        case let .todayDetail(item, handler):
+            startTodayDetailsFlow(item, onChange: handler)
         }
     }
     
@@ -62,8 +62,8 @@ final class Coordinator: Coordinatable {
         navigationController.pushViewController(todayModule.presentable, animated: true)
     }
     
-    private func startTodayDetailsFlow(_ item: Reminder) {
-        let vc = TodayItemViewController(reminder: item)
+    private func startTodayDetailsFlow(_ item: Reminder, onChange: @escaping (Reminder) -> Void) {
+        let vc = TodayItemViewController(reminder: item, onChange: onChange)
         navigationController.pushViewController(vc, animated: true)
     }
 }
