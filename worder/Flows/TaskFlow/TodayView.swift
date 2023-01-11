@@ -64,6 +64,11 @@ final class TodayView: Viеw {
         }
         modelDidSelect?(item, updateHandler)
     }
+    
+    func addReminder(_ item: Reminder) {
+        reminders.append(item)
+        updateSnapshot()
+    }
 }
 
 extension TodayView: UICollectionViewDelegate {

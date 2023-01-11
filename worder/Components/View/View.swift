@@ -9,6 +9,9 @@ import UIKit.UIView
 
 class Viеw: UIView {
     
+    var present: (UIViewController) -> Void = { _ in }
+    var dismiss: () -> Void = {}
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -33,4 +36,3 @@ class Viеw: UIView {
     func layout() {
     }
 }
-

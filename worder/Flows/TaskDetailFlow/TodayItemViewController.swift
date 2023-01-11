@@ -20,6 +20,7 @@ final class TodayItemViewController: UICollectionViewController {
             onChange(reminder)
         }
     }
+    var isAddingMode = false
     var workingReminder: Reminder
     var onChange: (Reminder) -> Void
     
@@ -53,7 +54,12 @@ final class TodayItemViewController: UICollectionViewController {
         case true:
             prepareForEditing()
         case false:
-            prepareForViewing()
+            if isAddingMode {
+                onChange(workingReminder)
+            } else {
+                prepareForViewing()
+            }
+            
         }
     }
     
