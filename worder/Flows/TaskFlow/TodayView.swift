@@ -42,6 +42,7 @@ final class TodayView: Viеw {
         var listConf = UICollectionLayoutListConfiguration(appearance: .grouped)
         listConf.showsSeparators = false
         listConf.backgroundColor = .clear
+        listConf.trailingSwipeActionsConfigurationProvider = makeSwipeAction
         return .list(using: listConf)
     }
     
@@ -68,6 +69,21 @@ final class TodayView: Viеw {
     func addReminder(_ item: Reminder) {
         reminders.append(item)
         updateSnapshot()
+    }
+    
+    private func makeSwipeAction(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
+        guard let indexPath = indexPath,
+              let id = dataSource.itemIdentifier(for: indexPath) else {
+            return nil
+        }
+        let deleteTitle = NSLocalizedString("Delete", comment: "delete action")
+        let deleteAction = UIContextualAction(style: .destructive, title: deleteTitle) { [weak self] _, _, completion in
+            self?.deleteReminder(id)
+            self?.updateSnapshot()
+            completion(false)
+        }
+        
+        return .init(actions: [deleteAction])
     }
 }
 

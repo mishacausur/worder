@@ -83,4 +83,10 @@ extension TodayView {
         }
         return action
     }
+    
+    internal func deleteReminder(_ item: Reminder.ID) {
+        let index = reminders.reminderIndex(with: item)
+        reminders.remove(at: index)
+    }
+    
 }
