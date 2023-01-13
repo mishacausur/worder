@@ -65,10 +65,11 @@ extension TodayView {
         updateSnapshot(for: [id])
     }
     
-    func updateSnapshot(for items: [Reminder.ID] = []) {
+    func updateSnapshot(for itemsThatChanged: [Reminder.ID] = []) {
+        let items = itemsThatChanged.filter { id in filteredReminders.contains { $0.id == id }}
         var snapshot = SnapShot()
         snapshot.appendSections([0])
-        snapshot.appendItems(reminders.map { $0.id })
+        snapshot.appendItems(filteredReminders.map { $0.id })
         if !items.isEmpty {
             snapshot.reloadItems(items)
         }

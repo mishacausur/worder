@@ -10,9 +10,18 @@ import UIKit.UIDiffableDataSource
 import class UIKit.UIView
 
 final class TodayView: Viеw {
+    
+    private typealias State = TodayViewModel.ReminderState
+    
     var modelDidSelect: ((Reminder, @escaping (Reminder) -> Void) -> Void)?
     var dataSource: DataSource!
     var reminders = Reminder.sampleData
+    var filteredReminders: [Reminder] {
+        reminders
+            .filter { state.shouldInclude($0.dueDate) }
+            .sorted { $0.dueDate < $1.dueDate }
+    }
+    private var state: State = .today
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +98,7 @@ final class TodayView: Viеw {
 
 extension TodayView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        let id = reminders[indexPath.row].id
+        let id = filteredReminders[indexPath.row].id
         showDetail(for: id)
         return false
     }
