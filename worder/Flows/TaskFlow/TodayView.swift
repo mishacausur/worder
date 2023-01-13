@@ -12,7 +12,12 @@ import class UIKit.UIView
 final class TodayView: Viеw {
     
     private typealias State = TodayViewModel.ReminderState
-    
+    var title: String = .empty {
+        didSet {
+           titleDidChange(title)
+        }
+    }
+    var titleDidChange: (String) -> Void = { _ in }
     var modelDidSelect: ((Reminder, @escaping (Reminder) -> Void) -> Void)?
     var dataSource: DataSource!
     var reminders = Reminder.sampleData
@@ -22,7 +27,7 @@ final class TodayView: Viеw {
             .sorted { $0.dueDate < $1.dueDate }
     }
     private var state: State = .today
-    
+    let segmenter = UISegmentedControl(items: State.allCases.map(\.name))
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -31,6 +36,7 @@ final class TodayView: Viеw {
         collectionView.collectionViewLayout = listLayout()
         collectionView.delegate = self
         backgroundColor = .todayNavigationBackground
+        segmenter.selectedSegmentIndex = state.rawValue
         let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         register(cellReg)
         super.configure()
