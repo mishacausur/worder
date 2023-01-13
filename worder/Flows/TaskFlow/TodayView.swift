@@ -37,6 +37,7 @@ final class TodayView: Viеw {
         collectionView.delegate = self
         backgroundColor = .todayNavigationBackground
         segmenter.selectedSegmentIndex = state.rawValue
+        segmenter.addTarget(self, action: #selector(didChangeSegment(_:)), for: .valueChanged)
         let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         register(cellReg)
         super.configure()
@@ -99,6 +100,11 @@ final class TodayView: Viеw {
         }
         
         return .init(actions: [deleteAction])
+    }
+    
+    @objc private func didChangeSegment(_ sender: UISegmentedControl) {
+        state = State(rawValue: sender.selectedSegmentIndex) ?? .today
+        updateSnapshot()
     }
 }
 
