@@ -17,6 +17,14 @@ final class TodayView: Viеw {
            titleDidChange(title)
         }
     }
+    var progress: CGFloat {
+        let size = 1.0 / CGFloat(filteredReminders.count)
+        let progress = filteredReminders.reduce(0.0) {
+            let completed = $1.isComplete ? size : 0
+            return $0 + completed
+        }
+        return progress
+    }
     var titleDidChange: (String) -> Void = { _ in }
     var modelDidSelect: ((Reminder, @escaping (Reminder) -> Void) -> Void)?
     var dataSource: DataSource!
@@ -28,7 +36,7 @@ final class TodayView: Viеw {
     }
     private var state: State = .today
     let segmenter = UISegmentedControl(items: State.allCases.map(\.name))
-    private var header: ProgressiveHeaderView?
+    internal var header: ProgressiveHeaderView?
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -39,9 +47,13 @@ final class TodayView: Viеw {
         backgroundColor = .todayNavigationBackground
         segmenter.selectedSegmentIndex = state.rawValue
         segmenter.addTarget(self, action: #selector(didChangeSegment(_:)), for: .valueChanged)
+        collectionView.backgroundColor = .todayGradientFutureBegin
         let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         register(cellReg)
-        let headerReg = UICollectionView.SupplementaryRegistration(elementKind: ProgressiveHeaderView.elementaryKind, handler: supplementaryRegistrationHandler)
+        let headerReg = UICollectionView.SupplementaryRegistration(
+            elementKind: ProgressiveHeaderView.elementaryKind,
+            handler: supplementaryRegistrationHandler
+        )
         dataSource.supplementaryViewProvider = {
             return self.collectionView.dequeueConfiguredReusableSupplementary(using: headerReg, for: $2)
         }
@@ -123,5 +135,13 @@ extension TodayView: UICollectionViewDelegate {
         let id = filteredReminders[indexPath.row].id
         showDetail(for: id)
         return false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        guard elementKind == ProgressiveHeaderView.elementaryKind,
+              let progressView = view as? ProgressiveHeaderView else {
+            return
+        }
+        progressView.updateProgress(progress)
     }
 }

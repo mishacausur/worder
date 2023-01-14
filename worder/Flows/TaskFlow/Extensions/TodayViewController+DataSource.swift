@@ -73,6 +73,7 @@ extension TodayView {
         if !items.isEmpty {
             snapshot.reloadItems(items)
         }
+        header?.updateProgress(progress)
         dataSource.apply(snapshot)
     }
     
