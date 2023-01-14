@@ -67,6 +67,10 @@
 		B6AB7741296C9980007BB88B /* DatePickerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7740296C9980007BB88B /* DatePickerContentView.swift */; };
 		B6AB77432972B07A007BB88B /* ProgressiveHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */; };
 		B6AB77452972C659007BB88B /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB77442972C659007BB88B /* CALayer.swift */; };
+		B6AB7748297349D9007BB88B /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7747297349D9007BB88B /* EventError.swift */; };
+		B6AB774A29734AB4007BB88B /* EXEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB774929734AB4007BB88B /* EXEvent.swift */; };
+		B6AB774C29734DEA007BB88B /* Reminder+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB774B29734DEA007BB88B /* Reminder+Event.swift */; };
+		B6AB774E29734E7C007BB88B /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB774D29734E7C007BB88B /* ReminderStore.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
@@ -143,6 +147,10 @@
 		B6AB7740296C9980007BB88B /* DatePickerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerContentView.swift; sourceTree = "<group>"; };
 		B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressiveHeaderView.swift; sourceTree = "<group>"; };
 		B6AB77442972C659007BB88B /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		B6AB7747297349D9007BB88B /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
+		B6AB774929734AB4007BB88B /* EXEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXEvent.swift; sourceTree = "<group>"; };
+		B6AB774B29734DEA007BB88B /* Reminder+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+Event.swift"; sourceTree = "<group>"; };
+		B6AB774D29734E7C007BB88B /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -334,6 +342,7 @@
 		B66C8D4529197498009B0055 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B6AB7746297349C7007BB88B /* EventService */,
 				B66C8D63291AEF69009B0055 /* DataService */,
 				B66C8D58291A9D06009B0055 /* Auth */,
 				B66C8D46291974A4009B0055 /* Network */,
@@ -434,6 +443,17 @@
 				B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */,
 			);
 			path = ContentViews;
+			sourceTree = "<group>";
+		};
+		B6AB7746297349C7007BB88B /* EventService */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB7747297349D9007BB88B /* EventError.swift */,
+				B6AB774929734AB4007BB88B /* EXEvent.swift */,
+				B6AB774D29734E7C007BB88B /* ReminderStore.swift */,
+				B6AB774B29734DEA007BB88B /* Reminder+Event.swift */,
+			);
+			path = EventService;
 			sourceTree = "<group>";
 		};
 		B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */ = {
@@ -571,6 +591,7 @@
 				B6AB7729296AFAD0007BB88B /* TodayViewController+Action.swift in Sources */,
 				B6EBD1D3292A5770001DC2D2 /* WordViewController.swift in Sources */,
 				B62AD62C2965FC6500ED5409 /* TodayViewController.swift in Sources */,
+				B6AB774A29734AB4007BB88B /* EXEvent.swift in Sources */,
 				B6AB773C296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift in Sources */,
 				B6EBD1CD292A5748001DC2D2 /* WordViewModel.swift in Sources */,
 				B66C8D65291AEFA6009B0055 /* DataManager.swift in Sources */,
@@ -601,6 +622,7 @@
 				B6EBD1C1292A40B9001DC2D2 /* DetailView.swift in Sources */,
 				B66C8D06291949CA009B0055 /* ViewController.swift in Sources */,
 				B668747F29264A73002CB33B /* Completion.swift in Sources */,
+				B6AB774C29734DEA007BB88B /* Reminder+Event.swift in Sources */,
 				B66C8D3B291962D1009B0055 /* Builder.swift in Sources */,
 				B6EBD1DD292CFCB3001DC2D2 /* TempEntities.swift in Sources */,
 				B62AD62E2965FC7900ED5409 /* TodayViewModel.swift in Sources */,
@@ -617,9 +639,11 @@
 				B6AB772C296B124F007BB88B /* TodayItemViewController.swift in Sources */,
 				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
 				B6AB77432972B07A007BB88B /* ProgressiveHeaderView.swift in Sources */,
+				B6AB7748297349D9007BB88B /* EventError.swift in Sources */,
 				B6EBD1CA292A5695001DC2D2 /* String.swift in Sources */,
 				B6EBD1D8292A784C001DC2D2 /* AnimatedSectionModel.swift in Sources */,
 				B66C8D3329195302009B0055 /* MainViewController.swift in Sources */,
+				B6AB774E29734E7C007BB88B /* ReminderStore.swift in Sources */,
 				B6EBD1C5292A40CC001DC2D2 /* DetailViewController.swift in Sources */,
 				B6EBD1C3292A40C3001DC2D2 /* DetailViewAssembly.swift in Sources */,
 				B66C8D02291949CA009B0055 /* AppDelegate.swift in Sources */,
