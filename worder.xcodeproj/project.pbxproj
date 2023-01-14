@@ -66,6 +66,7 @@
 		B6AB773E296C969F007BB88B /* TextViewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB773D296C969F007BB88B /* TextViewContentView.swift */; };
 		B6AB7741296C9980007BB88B /* DatePickerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7740296C9980007BB88B /* DatePickerContentView.swift */; };
 		B6AB77432972B07A007BB88B /* ProgressiveHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */; };
+		B6AB77452972C659007BB88B /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB77442972C659007BB88B /* CALayer.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
@@ -141,6 +142,7 @@
 		B6AB773D296C969F007BB88B /* TextViewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContentView.swift; sourceTree = "<group>"; };
 		B6AB7740296C9980007BB88B /* DatePickerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerContentView.swift; sourceTree = "<group>"; };
 		B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressiveHeaderView.swift; sourceTree = "<group>"; };
+		B6AB77442972C659007BB88B /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -291,7 +293,6 @@
 				B6EBD1CB292A5734001DC2D2 /* WordFlow */,
 				B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */,
 				B66C8D2D29194C4E009B0055 /* MainFlow */,
-				B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -325,6 +326,7 @@
 				B668747E29264A73002CB33B /* Completion.swift */,
 				B6EBD1C9292A5695001DC2D2 /* String.swift */,
 				B6AB77222969EFAD007BB88B /* UIColor.swift */,
+				B6AB77442972C659007BB88B /* CALayer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -470,6 +472,7 @@
 		B6EBD1D9292A8699001DC2D2 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */,
 				B6EBD1DA292A86B3001DC2D2 /* WordCollectionViewCell.swift */,
 			);
 			path = Subviews;
@@ -624,6 +627,7 @@
 				B66C8D2229194B1A009B0055 /* Coordinatable.swift in Sources */,
 				B66C8D4029196310009B0055 /* NSLayoutConstraint.swift in Sources */,
 				B6AB77212969EAA1007BB88B /* TodayViewController+DataSource.swift in Sources */,
+				B6AB77452972C659007BB88B /* CALayer.swift in Sources */,
 				B66C8D1E29194ADF009B0055 /* Coordinated.swift in Sources */,
 				B66C8D2029194AFF009B0055 /* Coordinator.swift in Sources */,
 			);

@@ -104,6 +104,14 @@ final class TodayView: Viеw {
         modelDidSelect?(item, updateHandler)
     }
     
+    func refreshBackground() {
+        collectionView.backgroundView = nil
+        let backgroundView = UIView()
+        let gradient = CAGradientLayer.gradientLayer(for: state, in: collectionView.frame)
+        backgroundView.layer.addSublayer(gradient)
+        collectionView.backgroundView = backgroundView
+    }
+    
     func addReminder(_ item: Reminder) {
         reminders.append(item)
         updateSnapshot()
@@ -126,6 +134,7 @@ final class TodayView: Viеw {
     
     @objc private func didChangeSegment(_ sender: UISegmentedControl) {
         state = State(rawValue: sender.selectedSegmentIndex) ?? .today
+        refreshBackground()
         updateSnapshot()
     }
 }
