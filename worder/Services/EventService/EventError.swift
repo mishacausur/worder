@@ -11,6 +11,8 @@ enum EventError: LocalizedError {
     case failedReading
     case wrongDate
     case accessDenied
+    case accessRestricted
+    case unknowned
     
     var errorDescription: String? {
         switch self {
@@ -20,6 +22,10 @@ enum EventError: LocalizedError {
             return NSLocalizedString("The item has wrong date", comment: "The date can not be parsed correctly")
         case .accessDenied:
             return NSLocalizedString("The app doesn't have permission to read reminders", comment: "Access granted needed")
+        case .accessRestricted:
+            return NSLocalizedString("The permission was restricted", comment: "Access granted needed")
+        case .unknowned:
+            return NSLocalizedString("Unknowned error has occured", comment: "Unknown")
         }
     }
 }
