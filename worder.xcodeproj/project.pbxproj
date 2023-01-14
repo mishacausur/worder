@@ -65,6 +65,7 @@
 		B6AB773C296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */; };
 		B6AB773E296C969F007BB88B /* TextViewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB773D296C969F007BB88B /* TextViewContentView.swift */; };
 		B6AB7741296C9980007BB88B /* DatePickerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB7740296C9980007BB88B /* DatePickerContentView.swift */; };
+		B6AB77432972B07A007BB88B /* ProgressiveHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */; };
 		B6EBD1B929268E8D001DC2D2 /* ReactiveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */; };
 		B6EBD1BC2927C2F3001DC2D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B6EBD1BB2927C2F3001DC2D2 /* RxCocoa */; };
 		B6EBD1BF292A40B0001DC2D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */; };
@@ -139,6 +140,7 @@
 		B6AB773B296B4EEE007BB88B /* UIContentConfiguration+Stateless.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentConfiguration+Stateless.swift"; sourceTree = "<group>"; };
 		B6AB773D296C969F007BB88B /* TextViewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContentView.swift; sourceTree = "<group>"; };
 		B6AB7740296C9980007BB88B /* DatePickerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerContentView.swift; sourceTree = "<group>"; };
+		B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressiveHeaderView.swift; sourceTree = "<group>"; };
 		B6EBD1B829268E8D001DC2D2 /* ReactiveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTest.swift; sourceTree = "<group>"; };
 		B6EBD1BE292A40B0001DC2D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B6EBD1C0292A40B9001DC2D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				B6EBD1CB292A5734001DC2D2 /* WordFlow */,
 				B6EBD1BD292A40A0001DC2D2 /* DetailsFlow */,
 				B66C8D2D29194C4E009B0055 /* MainFlow */,
+				B6AB77422972B07A007BB88B /* ProgressiveHeaderView.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				B6AB773A296B4CF8007BB88B /* TextFieldContentView.swift in Sources */,
 				B6AB772C296B124F007BB88B /* TodayItemViewController.swift in Sources */,
 				B66C8D60291AEE3E009B0055 /* WordModel.swift in Sources */,
+				B6AB77432972B07A007BB88B /* ProgressiveHeaderView.swift in Sources */,
 				B6EBD1CA292A5695001DC2D2 /* String.swift in Sources */,
 				B6EBD1D8292A784C001DC2D2 /* AnimatedSectionModel.swift in Sources */,
 				B66C8D3329195302009B0055 /* MainViewController.swift in Sources */,

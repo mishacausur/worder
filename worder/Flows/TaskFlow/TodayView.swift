@@ -28,6 +28,7 @@ final class TodayView: Viеw {
     }
     private var state: State = .today
     let segmenter = UISegmentedControl(items: State.allCases.map(\.name))
+    private var header: ProgressiveHeaderView?
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -40,6 +41,10 @@ final class TodayView: Viеw {
         segmenter.addTarget(self, action: #selector(didChangeSegment(_:)), for: .valueChanged)
         let cellReg = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         register(cellReg)
+        let headerReg = UICollectionView.SupplementaryRegistration(elementKind: ProgressiveHeaderView.elementaryKind, handler: supplementaryRegistrationHandler)
+        dataSource.supplementaryViewProvider = {
+            return self.collectionView.dequeueConfiguredReusableSupplementary(using: headerReg, for: $2)
+        }
         super.configure()
     }
     
@@ -56,6 +61,7 @@ final class TodayView: Viеw {
     
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConf = UICollectionLayoutListConfiguration(appearance: .grouped)
+        listConf.headerMode = .supplementary
         listConf.showsSeparators = false
         listConf.backgroundColor = .clear
         listConf.trailingSwipeActionsConfigurationProvider = makeSwipeAction
@@ -71,6 +77,10 @@ final class TodayView: Viеw {
         })
         updateSnapshot()
         collectionView.dataSource = dataSource
+    }
+    
+    private func supplementaryRegistrationHandler(_ headerView: ProgressiveHeaderView, kind: String, indexPath: IndexPath) {
+        header = headerView
     }
     
     private func showDetail(for id: Reminder.ID) {
