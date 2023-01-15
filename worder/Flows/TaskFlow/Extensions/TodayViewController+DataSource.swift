@@ -13,6 +13,8 @@ extension TodayView {
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
     typealias SnapShot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
     
+    private var store: ReminderStore { ReminderStore.shared }
+    
     var reminderCompletedValue: String {
         NSLocalizedString("Completed", comment: "Reminder completed value")
     }
@@ -48,6 +50,10 @@ extension TodayView {
         button.setImage(image, for: .normal)
         button.setImage(.init(named: "gear"), for: .selected)
         return .init(customView: button, placement: .leading(displayed: .always))
+    }
+    
+    internal func getReminders() {
+        prepareStore()
     }
     
     internal func getItem(with id: Reminder.ID) -> Reminder {
@@ -91,4 +97,19 @@ extension TodayView {
         reminders.remove(at: index)
     }
     
+    private func prepareStore() {
+        Task {
+            do {
+                try await store.grantAccess()
+                reminders = try await store.read()
+            } catch EventError.accessDenied, EventError.accessRestricted {
+                #if DEBUG
+                reminders = Reminder.sampleData
+                #endif
+            } catch {
+                showError(error)
+            }
+            updateSnapshot()
+        }
+    }
 }

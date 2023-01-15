@@ -28,7 +28,7 @@ final class TodayView: Viеw {
     var titleDidChange: (String) -> Void = { _ in }
     var modelDidSelect: ((Reminder, @escaping (Reminder) -> Void) -> Void)?
     var dataSource: DataSource!
-    var reminders = Reminder.sampleData
+    var reminders: [Reminder] = []
     var filteredReminders: [Reminder] {
         reminders
             .filter { state.shouldInclude($0.dueDate) }
@@ -57,6 +57,7 @@ final class TodayView: Viеw {
         dataSource.supplementaryViewProvider = {
             return self.collectionView.dequeueConfiguredReusableSupplementary(using: headerReg, for: $2)
         }
+        getReminders()
         super.configure()
     }
     
@@ -102,6 +103,16 @@ final class TodayView: Viеw {
             self?.updateSnapshot(for: [$0.id])
         }
         modelDidSelect?(item, updateHandler)
+    }
+    
+    internal func showError(_ error: Error) {
+        let errorTitle = NSLocalizedString("Error", comment: "An error has been occured")
+        let alert = UIAlertController(title: errorTitle, message: error.localizedDescription, preferredStyle: .actionSheet)
+        let actionTitle = NSLocalizedString("OK", comment: "Alert OK button title")
+        alert.addAction(.init(title: actionTitle, style: .default) { [weak self] _ in
+            self?.dismiss()
+        })
+        present(alert)
     }
     
     func refreshBackground() {
