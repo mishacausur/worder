@@ -52,6 +52,13 @@ extension TodayView {
         return .init(customView: button, placement: .leading(displayed: .always))
     }
     
+    internal func reminderStoreChanged() {
+        Task {
+            reminders = try await store.read()
+            updateSnapshot()
+        }
+    }
+    
     internal func getReminders() {
         prepareStore()
     }
@@ -102,6 +109,7 @@ extension TodayView {
             do {
                 try await store.grantAccess()
                 reminders = try await store.read()
+                NotificationCenter.default.addObserver(self, selector: #selector(eventStoreChanged), name: .EKEventStoreChanged, object: nil)
             } catch EventError.accessDenied, EventError.accessRestricted {
                 #if DEBUG
                 reminders = Reminder.sampleData

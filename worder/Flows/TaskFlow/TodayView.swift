@@ -148,6 +148,10 @@ final class TodayView: Viеw {
         refreshBackground()
         updateSnapshot()
     }
+    
+    @objc internal func eventStoreChanged(_ notification: NSNotification) {
+        reminderStoreChanged()
+    }
 }
 
 extension TodayView: UICollectionViewDelegate {
