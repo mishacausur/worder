@@ -7,6 +7,7 @@
 
 import Foundation
 import class EventKit.EKEventStore
+import class EventKit.EKReminder
 
 final class ReminderStore {
     static let shared = ReminderStore()
@@ -50,5 +51,12 @@ final class ReminderStore {
             }
         }
         return items
+    }
+    
+    private func read(with id: Reminder.ID) throws -> EKReminder {
+        guard let reminder = store.calendarItem(withIdentifier: id) as? EKReminder else {
+            throw EventError.failedReadingCalendarItem
+        }
+        return reminder
     }
 }

@@ -13,6 +13,7 @@ enum EventError: LocalizedError {
     case accessDenied
     case accessRestricted
     case unknowned
+    case failedReadingCalendarItem
     
     var errorDescription: String? {
         switch self {
@@ -26,6 +27,8 @@ enum EventError: LocalizedError {
             return NSLocalizedString("The permission was restricted", comment: "Access granted needed")
         case .unknowned:
             return NSLocalizedString("Unknowned error has occured", comment: "Unknown")
+        case .failedReadingCalendarItem:
+            return NSLocalizedString("Failed to read a calendar item.", comment: "failed reading calendar item error description")
         }
     }
 }
