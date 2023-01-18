@@ -53,6 +53,22 @@ final class ReminderStore {
         return items
     }
     
+    @discardableResult
+    func save(_ reminder: Reminder) throws -> Reminder.ID {
+        guard isAvailable else {
+            throw EventError.accessDenied
+        }
+        let item: EKReminder
+        do {
+            item = try read(with: reminder.id)
+        } catch {
+            item = EKReminder(eventStore: store)
+        }
+        item.update(using: reminder, in: store)
+        try store.save(item, commit: true)
+        return item.calendarItemIdentifier
+    }
+
     private func read(with id: Reminder.ID) throws -> EKReminder {
         guard let reminder = store.calendarItem(withIdentifier: id) as? EKReminder else {
             throw EventError.failedReadingCalendarItem

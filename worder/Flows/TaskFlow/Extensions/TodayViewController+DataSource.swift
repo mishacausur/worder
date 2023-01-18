@@ -13,7 +13,7 @@ extension TodayView {
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
     typealias SnapShot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
     
-    private var store: ReminderStore { ReminderStore.shared }
+    internal var store: ReminderStore { ReminderStore.shared }
     
     var reminderCompletedValue: String {
         NSLocalizedString("Completed", comment: "Reminder completed value")

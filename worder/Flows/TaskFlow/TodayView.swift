@@ -124,8 +124,16 @@ final class TodayView: Viеw {
     }
     
     func addReminder(_ item: Reminder) {
-        reminders.append(item)
+        var item = item
         updateSnapshot()
+        do {
+            let idFromStore = try store.save(item)
+            item.id = idFromStore
+            reminders.append(item)
+        } catch EventError.accessDenied {
+        } catch {
+            showError(error)
+        }
     }
     
     private func makeSwipeAction(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
